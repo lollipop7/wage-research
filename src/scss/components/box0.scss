@@ -2,9 +2,6 @@
  * Created by lollipop at 
  */
 .box0 {
-  img {
-    position: absolute;
-  }
   .qn-test {
     @include px2rem(top, 130px);
     @include px2rem(width, 349px);

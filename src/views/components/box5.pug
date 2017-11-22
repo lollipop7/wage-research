@@ -1,2 +1,60 @@
 //created by lollipop 2017/11/21
 .swiper-slide.box5(data-hash="slide5")
+    include ../includes/header
+    img.page-num.ani(src="images/forms/5-5.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
+    ul.commited.justify-center
+        //问题12
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
+            img(src="images/forms/question12.png", class="question12")
+            .choice
+                - var tewlevethList = [1,2,3,4,5,6]
+                each item, index in tewlevethList
+                    .label-container
+                        label
+                            img(src=`images/forms/question12/${item}.png`)
+                            input(type="radio" name="12", value=`${item}`)
+        //问题13
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".59s")
+            img(src="images/forms/question13.png", class="question13")
+            .choice
+                - var thirteenthList = [1,2]
+                each item, index in thirteenthList
+                    .label-container
+                        label
+                            img(src=`images/forms/question13/${item}.png`)
+                            input(type="radio" name="13", value=`${item}`)
+        //问题14
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".69s")
+            .label-text
+                img(src="images/forms/question14.png", class="question14")
+                input(type="number", id="support")
+        //问题15
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".79s")
+            img(src="images/forms/question15.png", class="question15")
+            .choice
+                - var fifteenthList = [1,2]
+                each item, index in fifteenthList
+                    .label-container
+                        label
+                            img(src=`images/forms/question15/${item}.png`)
+                            input(type="radio" name="15", value=`${item}`)
+        //问题16
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".89s")
+            img(src="images/forms/question16.png", class="question15")
+            .choice
+                - var sixteenthList = [1,2]
+                each item, index in sixteenthList
+                    .label-container
+                        label
+                            img(src=`images/forms/question16/${item}.png`)
+                            input(type="radio" name="16", value=`${item}`)
+        //问题17
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".89s")
+            img(src="images/forms/question17.png", class="question17")
+            .choice
+                - var seventeenthList = [1,2,3,4,5,6]
+                each item, index in seventeenthList
+                    .label-container
+                        label
+                            img(src=`images/forms/question17/${item}.png`)
+                            input(type="radio" name="17", value=`${item}`)

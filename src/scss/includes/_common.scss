@@ -17,17 +17,6 @@
   background-size: 100% 100%;
 }
 
-//header png
-.header {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-image: url(../images/forms/header.png);
-  @include px2rem(width,560px);
-  @include px2rem(height,267px);
-}
-
-
 //水平居中
 .justify-center {
   position: absolute;
@@ -46,16 +35,36 @@
   margin: auto;
 }
 
+//header png
+.header {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(../images/forms/header.png);
+  @include px2rem(width,560px);
+  @include px2rem(height,267px);
+  background-size: 100% 100%;
+}
+
 //下拉箭头
 .arrow-down {
+  display: block;
   @include px2rem(width, 38px);
   @include px2rem(height, 22px);
+  background-image: url(../images/arrow-down.png);
   position: absolute;
   @include px2rem(bottom, 62px);
   left: 0;
   right: 0;
   margin: 0 auto;
   animation: webSwipeTipAfter 1.5s infinite ease-in-out;
+  background-size: 100% 100%;
+}
+
+img {
+  position: absolute;
+  display: block;
 }
 
 

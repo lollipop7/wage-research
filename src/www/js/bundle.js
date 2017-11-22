@@ -11,7 +11,7 @@ var bundle = {
     },
     //实例化swiper
     initSwiper: function(){
-        var mySwiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('.swiper-container', {
             direction: 'vertical',
             pagination: '.swiper-pagination',
             hasnav: true,

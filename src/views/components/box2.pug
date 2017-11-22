@@ -1,2 +1,31 @@
 //created by lollipop 2017/11/21
 .swiper-slide.preload.box2(data-hash="slide2")
+    include ../includes/header
+    img.page-num.ani(src="images/forms/2-5.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
+    ul.commited.justify-center
+        //问题5
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
+            .label-text
+                img(src="images/forms/question5.png", class="question5")
+                input(type="text", id="company")
+        //问题6
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
+            img(src="images/forms/question6.png", class="question6")
+            .choice
+                - var sixthList = [1,2,3,4,5,6,7,8,9,10,11]
+                each item, index in sixthList
+                    .label-container
+                        label
+                            img(src=`images/forms/question6/${item}.png`)
+                            input(type="radio" name="6", value=`${item}`)
+        //问题7
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".59s")
+            img(src="images/forms/question7.png", class="question7")
+            .choice
+                - var seventhList = [1,2,3,4,5,6]
+                each item, index in seventhList
+                    .label-container
+                        label
+                            img(src=`images/forms/question7/${item}.png`)
+                            input(type="radio" name="7", value=`${item}`)
+    .arrow-down.justify-center

@@ -1,4 +1,36 @@
 //created by lollipop 2017/11/21
 .swiper-slide.preload.box1(data-hash="slide1")
-    .header.ani(swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".09s")
-    .arrow-down.justify-center.ani(swiper-animate-effect="slideInBottom",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
+    include ../includes/header
+    img.page-num.ani(src="images/forms/1-5.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
+    ul.commited.justify-center
+        //问题1
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
+            .label-text
+                img(src="images/forms/question1.png", class="question1")
+                input(type="number", id="workyear")
+        //问题2
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".39s")
+            .label-text
+                img(src="images/forms/question2.png", class="question2")
+                input(type="number", id="during")
+        //问题3
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
+            img(src="images/forms/question3.png", class="question3")
+            .choice
+                - var thirdList = [1,2,3,4,5,6,7,8,9,10,11]
+                    each item, index in thirdList
+                        .label-container
+                            label
+                                img(src=`images/forms/question3/${item}.png`)
+                                input(type="radio" name="3", value=`${item}`)
+        //问题4
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".59s")
+            img(src="images/forms/question4.png", class="question4")
+            .choice
+                - var fourthList = [1,2,3,4]
+                each item, index in fourthList
+                    .label-container
+                        label
+                            img(src=`images/forms/question4/${item}.png`)
+                            input(type="radio" name="4", value=`${item}`)
+    .arrow-down

@@ -1,2 +1,21 @@
 //created by lollipop 2017/11/21
 .swiper-slide.box4(data-hash="slide4")
+    include ../includes/header
+    img.page-num.ani(src="images/forms/4-5.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
+    ul.commited.justify-center
+        //问题10
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
+            img(src="images/forms/question10.png", class="question10")
+            .choice
+                - var tenththList = [1,2,3,4,5,6]
+                each item, index in tenththList
+                    .label-container
+                        label
+                            img(src=`images/forms/question10/${item}.png`)
+                            input(type="radio" name="10", value=`${item}`)
+        //问题11
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
+            .label-text
+                img(src="images/forms/question11.png", class="question11")
+                input(type="number", id="benefit")
+    .arrow-down

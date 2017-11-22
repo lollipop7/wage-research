@@ -1,11 +1,142 @@
 //Created by lollipop 2017/11/22
 
-.box1 {
+.box1,
+.box2,
+.box3,
+.box4,
+.box8 {
+  .arrow-down {
+    @include px2rem(bottom, 37px);
+  }
+}
+.box1,
+.box2,
+.box3,
+.box4,
+.box5 {
   //logo png
   .logo {
     @include px2rem(bottom, 111px);
     background-image: url(../images/forms/logo51jrq.png);
     @include px2rem(width, 200px);
     @include px2rem(height, 61px);
+  }
+
+  .page-num {
+    @include px2rem(top, 264px);
+    @include px2rem(right, 48px);
+    @include px2rem(width, 287px);
+    @include px2rem(height, 26px);
+  }
+
+  .commited {
+    @include px2rem(top, 328px);
+    @include px2rem(margin-left, 50px);
+    img {
+      position: static;
+      &.question1 {
+        @include px2rem(width, 542px);
+        @include px2rem(height, 116px);
+      }
+      &.question2 {
+        @include px2rem(width, 542px);
+        @include px2rem(height, 76px);
+      }
+      &.question3 {
+        @include px2rem(width, 239px);
+        @include px2rem(height, 39px);
+      }
+      &.question4 {
+        @include px2rem(width, 364px);
+        @include px2rem(height, 39px);
+      }
+      &.question5 {
+        @include px2rem(width, 542px);
+        @include px2rem(height, 76px);
+      }
+      &.question6 {
+        @include px2rem(width, 450px);
+        @include px2rem(height, 39px);
+      }
+      &.question7 {
+        @include px2rem(width, 306px);
+        @include px2rem(height, 39px);
+      }
+      &.question8 {
+        @include px2rem(width, 542px);
+        @include px2rem(height, 76px);
+      }
+      &.question9 {
+        @include px2rem(width, 541px);
+        @include px2rem(height, 71px);
+      }
+      &.question10 {
+        @include px2rem(width, 524px);
+        @include px2rem(height, 71px);
+      }
+      &.question11 {
+        @include px2rem(width, 521px);
+        @include px2rem(height, 150px);
+      }
+      &.question12 {
+        @include px2rem(width, 419px);
+        @include px2rem(height, 39px);
+      }
+      &.question13 {
+        @include px2rem(width, 497px);
+        @include px2rem(height, 39px);
+      }
+      &.question14 {
+        @include px2rem(width, 534px);
+        @include px2rem(height, 150px);
+      }
+      &.question15 {
+        @include px2rem(width, 413px);
+        @include px2rem(height, 39px);
+      }
+      &.question16 {
+        @include px2rem(width, 469px);
+        @include px2rem(height, 39px);
+      }
+      &.question16 {
+        @include px2rem(width, 495px);
+        @include px2rem(height, 39px);
+      }
+    }
+    .inner {
+      @include px2rem(margin-bottom, 40px);
+    }
+    .label-text {
+      position: relative;
+      input {
+        position: absolute;
+        @include px2rem(left, 15px);
+        bottom: 1px;
+        outline: none;
+        border: none;
+        width: 90%;
+        background-color: transparent;
+      }
+    }
+    .choice {
+      @include px2rem(margin, 10px);
+      .label-container {
+        display: inline-block;
+        position: relative;
+        @include px2rem(min-width, 252px);
+        @include px2rem(margin-top, 32px);
+        img {
+          display: inline-block;
+          @include px2rem(height,23px);
+        }
+        input {
+          position: absolute;
+          left: 0;
+          @include px2rem(width, 23px);
+          @include px2rem(height, 23px);
+          outline: none;
+        }
+      }
+    }
   }
 }

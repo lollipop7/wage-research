@@ -1,2 +1,21 @@
 //created by lollipop 2017/11/21
 .swiper-slide.box3(data-hash="slide3")
+    include ../includes/header
+    img.page-num.ani(src="images/forms/3-5.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
+    ul.commited.justify-center
+        //问题8
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
+            .label-text
+                img(src="images/forms/question8.png", class="question8")
+                input(type="number", id="salary")
+        //问题9
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
+            img(src="images/forms/question9.png", class="question9")
+            .choice
+                - var ninethList = [1,2,3,4,5]
+                each item, index in ninethList
+                    .label-container
+                        label
+                            img(src=`images/forms/question9/${item}.png`)
+                            input(type="radio" name="9", value=`${item}`)
+    .arrow-down
