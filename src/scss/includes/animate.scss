@@ -1,0 +1,22 @@
+//Created by lollipop 2017/11/21
+@keyframes webSwipeTipAfter{
+  0%{
+    opacity:1;
+    filter:alpha(opacity=100)
+  }
+  100%{
+    opacity:0;
+    filter:alpha(opacity=0);
+    transform:translate3d(0,-100%,0)
+  }
+}
+
+@keyframes weuiLoading {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}

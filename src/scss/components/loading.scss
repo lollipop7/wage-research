@@ -1,0 +1,22 @@
+/**
+ * Created by lollipop at 
+ */
+.loading-container {
+  .loading-circle {
+    display: block;
+    @include px2rem(width, 192px);
+    @include px2rem(height, 192px);
+    animation: weuiLoading linear 1s infinite;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid #06F;
+    border-left: 6px solid #06F;
+    border-right: 6px solid transparent;
+    border-radius: 50%;
+  }
+  span {
+    display: block;
+    @include px2rem(height, 64px);
+    @include px2rem(font-size, 64px);
+    text-align: center;
+  }
+}
