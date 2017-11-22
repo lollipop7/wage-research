@@ -4,20 +4,19 @@ html(lang='en')
     include includes/head
     body
         .loading-container
-            .loading-circle.vetical-center
-            span.vetical-center.number 0%
+            .loading-circle.vertical-center
+            span.vertical-center.number 0%
         .wrapper(style="display: none;")
             .swiper-container
                 .swiper-wraper
-                    //include components/box0
-                    //include components/box1
-                    //include components/box2
-                    //include components/box3
-                    //include components/box4
+                    include components/box0
+                    include components/box1
+                    include components/box2
+                    include components/box3
+                    include components/box4
                     include components/box5
-                    include components/box6
-                    include components/box7
-                    include components/box8
+                    //include components/box6
+                    //include components/box7
                 .swiper-pagination
         //- zepto
         script(src="js/zepto.min.js")
