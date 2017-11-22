@@ -1,3 +1,60 @@
 /**
  * Created by lollipop at 
  */
+.box0 {
+  img {
+    position: absolute;
+  }
+  .qn-test {
+    @include px2rem(top, 130px);
+    @include px2rem(width, 349px);
+    @include px2rem(height, 97px);
+  }
+  .you {
+    @include px2rem(top, 260px);
+    @include px2rem(width, 402px);
+    @include px2rem(height, 157px);
+  }
+  .whether {
+    @include px2rem(top, 486px);
+    @include px2rem(width, 529px);
+    @include px2rem(height, 63px);
+  }
+  .delay {
+    @include px2rem(top, 456px);
+    @include px2rem(left, 194px);
+    @include px2rem(width, 111px);
+    @include px2rem(height, 99px);
+  }
+  .leg {
+    @include px2rem(top, 596px);
+    @include px2rem(left, 161px);
+    @include px2rem(width, 315px);
+    @include px2rem(height, 73px);
+  }
+  .question {
+    @include px2rem(top, 590px);
+    @include px2rem(right, 98px);
+    @include px2rem(width, 57px);
+    @include px2rem(height, 77px);
+  }
+  .little-box {
+    @include px2rem(width, 485px);
+    @include px2rem(height, 82px);
+    @include px2rem(top, 715px);
+    .little-bg {
+      @include px2rem(top, 0px);
+      @include px2rem(width, 485px);
+      @include px2rem(height, 82px);
+    }
+    .little-text {
+      @include px2rem(width, 431px);
+      @include px2rem(height, 42px);
+    }
+  }
+  .alarm {
+    @include px2rem(bottom, 94px);
+    @include px2rem(width, 432px);
+    @include px2rem(height, 222px);
+  }
+}

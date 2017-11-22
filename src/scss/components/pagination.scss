@@ -1,3 +1,16 @@
 /**
  * Created by lollipop at 2017/11/22
  */
+.swiper-pagination-bullets {
+  @include px2rem(right, 22px);
+}
+.swiper-pagination-bullet {
+  background-color: rgba(228,202,150,.5) !important;
+  @include px2rem(height,20px);
+  @include px2rem(width,20px);
+  @include px2rem(margin,20px 0px);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #e4ca96 !important;
+}

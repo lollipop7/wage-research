@@ -6,13 +6,13 @@
 .swiper-slide {
   background-image: url(../images/forms/bg.jpg);
   &.box0 {
-    background: url(../images/initial/bg.jpg) no-repeat 0 0;
+    background-image: url(../images/initial/bg.jpg);
   }
   &.box7 {
-    background: url(../images/box7/bg.jpg) no-repeat 0 0;
+    background-image: url(../images/box7/bg.jpg);
   }
   &.box8 {
-    background: url(../images/box8/bg.jpg) no-repeat 0 0;
+    background-image: url(../images/box8/bg.jpg);
   }
   background-size: 100% 100%;
 }
@@ -22,17 +22,11 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: url(../images/forms/header.png) no-repeat 0 0;
+  background-image: url(../images/forms/header.png);
   @include px2rem(width,560px);
   @include px2rem(height,267px);
 }
 
-//logo png
-.logo {
-  background: url(../images/forms/logo51jrq.png) no-repeat 0 0;
-  @include px2rem(width, 200px);
-  @include px2rem(height, 61px);
-}
 
 //水平居中
 .justify-center {
@@ -43,7 +37,7 @@
 }
 
 //居中
-.vetical-center {
+.vertical-center {
   position: absolute;
   left: 0;
   right: 0;
