@@ -9,23 +9,28 @@ var bundle = {
         //预加载图片
         this.preloadImage();
     },
+    //设置swiper容器的高度
+    setContainerHeight: function(){
+        $('.swiper-container').css({
+            height: $(window).height()
+        })
+    },
     //实例化swiper
     initSwiper: function(){
         var swiper = new Swiper('.swiper-container', {
             direction: 'vertical',
             pagination: '.swiper-pagination',
-            hasnav: true,
-            // height: $(window).height(),
-            /*onInit: function(swiper){//初始化之后执行
+            hashnav:true,
+            onInit: function(swiper){//初始化之后执行
                 swiperAnimateCache(swiper);//隐藏动画元素
-                // swiperAnimate(swiper);//初始化完成开始动画
+                swiperAnimate(swiper);//初始化完成开始动画
             },
             onSlideChangeEnd: function(swiper){
-                // swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+                swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
             },
             longSwipesMs : 1000, //定义longSwipes的时间（单位ms），超过则属于longSwipes
             watchSlidesProgress: true, //开启这个参数来计算每个slide的progress(进度)，Swiper的progress无需设置即开启。
-            onProgress: function(swiper,progress) {//回调函数，当Swiper的progress被改变时执行。接受Swiper实例和progress作为参数（可选）
+            onProgress: function(swiper) {
                 for (var i = 0; i < swiper.slides.length; i++) {
                     var slide = swiper.slides[i];
                     var progress = slide.progress;
@@ -58,13 +63,7 @@ var bundle = {
                     es.OTransitionDuration =
                     es.transitionDuration = speed + 'ms';
                 }
-            }*/
-        })
-    },
-    //设置swiper容器的高度
-    setContainerHeight: function(){
-        $('.swiper-slide, .swiper-container').css({
-            height: $(window).height()
+            }
         })
     },
     //预加载图片

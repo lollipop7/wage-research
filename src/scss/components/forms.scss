@@ -140,3 +140,8 @@
     }
   }
 }
+.box0 {
+  .delay {
+    animation: swing-move  1s .3s infinite alternate ease-in-out;
+  }
+}

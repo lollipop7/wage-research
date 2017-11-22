@@ -1,17 +1,32 @@
 //Created by lollipop 2017/11/21
 .swiper-container {
   width: 100%;
+  height: 100%;
 }
 
 .swiper-slide {
   background-image: url(../images/forms/bg.jpg);
   &.box0 {
     background-image: url(../images/initial/bg.jpg);
+    @include px2rem(height, 1135px);
   }
-  &.box7 {
+  &.box1 {
+    @include px2rem(height, 1500px);
+  }
+  &.box2 {
+    @include px2rem(height, 1371px);
+  }
+  &.box3,
+  &.box4 {
+    @include px2rem(height, 1135px);
+  }
+  &.box5 {
+    @include px2rem(height, 1700px);
+  }
+  &.box6 {
     background-image: url(../images/box7/bg.jpg);
   }
-  &.box8 {
+  &.box7 {
     background-image: url(../images/box8/bg.jpg);
   }
   background-size: 100% 100%;

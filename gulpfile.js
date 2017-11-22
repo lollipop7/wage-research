@@ -9,7 +9,8 @@
 const join = require('path').join,
     fs = require('fs'),
     pump = require('pump'),
-    minimist = require('minimist');
+    minimist = require('minimist'),
+    _ = require('lodash');
 
 //argv
 const argv = minimist(process.argv.slice(2));
@@ -34,11 +35,22 @@ wwwDir = join(srcDir, 'www'),
 //scss folder
 scssDir = join(srcDir, 'scss');
 
+let fileArray = ['index','nair'];
 //compile pug template file to html
 gulp.task('compile:pug', () => {
-    return gulp.src(join(viewDir, 'index.pug'))
+    _.each(fileArray, pugFileName => {
+        let templateStr = fs.readFileSync(join(viewDir, `${pugFileName}.pug`), 'utf8'),
+            htmlTemplate = pug.render(templateStr, {
+                filename: join(viewDir, `includes/head.pug`)
+            });
+        fs.writeFile(join(srcDir,`www/${pugFileName}.html`), htmlTemplate, err => {
+            if(err) throw new Error(err);
+            console.log(`${pugFileName} is saved`)
+        })
+    });
+    /*return gulp.src(join(viewDir, 'index.pug'))
         .pipe($.pug({locals: require(join(srcDir, 'data/data.js'))}))
-        .pipe(gulp.dest(wwwDir))
+        .pipe(gulp.dest(wwwDir))*/
 });
 
 //compile pug watch
@@ -93,7 +105,7 @@ gulp.task('rename', () => {
 
 gulp.task('uglify', (cb) => {
     pump([
-            gulp.src(join(wwwDir), `js/${jsFileName}.js`),
+            gulp.src(join(srcDir, `www/js/${jsFileName}.js`)),
             $.uglify(),
             gulp.dest(join(distDir, 'js'))
         ],

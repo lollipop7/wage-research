@@ -1,0 +1,41 @@
+/**
+ * Created by lollipop at 
+ */
+.box6 {
+  .arrow-down {
+    @include px2rem(bottom, 37px);
+  }
+  .congra {
+    @include px2rem(top, 143px);
+    @include px2rem(width, 175px);
+    @include px2rem(height, 52px);
+  }
+  .income {
+    @include px2rem(top, 250px);
+    @include px2rem(width, 173px);
+    @include px2rem(height, 82px);
+  }
+  .beyond {
+    @include px2rem(margin-top, 418px);
+    @include px2rem(height, 34px);
+    position: relative;
+    .win {
+      @include px2rem(top, 0px);
+      @include px2rem(width, 324px);
+      @include px2rem(height, 34px);
+    }
+    .num {
+      @include px2rem(bottom, 0px);
+      @include px2rem(width, 148px);
+      @include px2rem(height, 82px);
+    }
+  }
+  .hint {
+    @include px2rem(bottom, 478px);
+    @include px2rem(width, 414px);
+    @include px2rem(height, 26px);
+  }
+  .bubbles {
+
+  }
+}
