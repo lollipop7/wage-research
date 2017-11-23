@@ -7,31 +7,31 @@
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
             .label-text
                 img(src="images/forms/question1.png", class="question1")
-                input(type="number", id="workyear")
+                input(type="number", id="workyears", name="workyears")
         //问题2
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".39s")
             .label-text
                 img(src="images/forms/question2.png", class="question2")
-                input(type="number", id="during")
+                input(type="number", id="workyearinfinance", name="workyearinfinance")
         //问题3
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
             img(src="images/forms/question3.png", class="question3")
             .choice
-                - var thirdList = [1,2,3,4,5,6,7,8,9,10,11]
+                - var thirdList = {1:'银行',2:'证券',3:'基金/互联网基金',4:'保险/互联网保险',5:'期货',6:'信托/互联网信托',7:'互联网金融',8:'互联网支付',9:'网络借贷',10:'大数据征信',11:'互联网金融资讯'}
                     each item, index in thirdList
                         label.label-container
-                            img(src=`images/forms/question3/${item}.png`)
-                            input.nair-radio-input(type="radio" name="3", value=`${item}`)
+                            img(src=`images/forms/question3/${index}.png`)
+                            input.nair-radio-input(type="radio" name="industry", value=`${item}`)
                             span.nair-radio-inner
         //问题4
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".59s")
             img(src="images/forms/question4.png", class="question4")
             .choice
-                - var fourthList = [1,2,3,4]
+                - var fourthList = {1:'外商独资',2: '中外合资',3:'央企/国企',4:'民营'}
                     each item, index in fourthList
                         label.label-container
-                            img(src=`images/forms/question4/${item}.png`)
-                            input.nair-radio-input(type="radio" name="4", value=`${item}`)
+                            img(src=`images/forms/question4/${index}.png`)
+                            input.nair-radio-input(type="radio" name="companynature", value=`${item}`)
                             span.nair-radio-inner
     img.logo51jrq.ani(src="images/forms/logo51jrq.png",swiper-animate-effect="slideInup",swiper-animate-duration=".5s",swiper-animate-delay="1.09s")
     .arrow-down

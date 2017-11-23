@@ -21,6 +21,7 @@
   "devDependencies": {
     "normalize-css": "^7.0.0",
     "animate.css": "^3.5.2",
-    "swiper": "3.4.1"
+    "swiper": "3.4.1",
+    "waypoints": "^4.0.1"
   }
 }

@@ -2,9 +2,18 @@
 $('document').ready(function(){
     bundle.init();
     $('.nair-radio-input').click(function () {
+        console.log($(this).val())
         $(this).siblings('.nair-radio-inner').addClass('active');
         $(this).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
-    })
+    });
+    // $('#submit').click(function () {
+    //     $('.share_modal').css({opacity: 1});
+    //     bundle.openShareModal();
+    // });
+    $('#iknow').click(function () {
+        $('.share_modal').css({opacity: 0});
+        bundle.closeShareModal();
+    });
 });
 var bundle = {
     init: function() {
@@ -147,5 +156,51 @@ var bundle = {
             //初始化swiper
             this.initSwiper();
         }.bind(this), 200);
-    }
+    },
+    //显示蒙层
+    openShareModal: function(){
+        $('.share_modal').css({opcity: 1});
+        var _this = $('.share-modal-wrap');
+        setTimeout(function () {
+            $(_this).find('.curve').addClass('animated fadeInUp');
+        }, 100);
+        setTimeout(function () {
+            $(_this).find('.step1').addClass('animated fadeInUp');
+        }, 200);
+        setTimeout(function () {
+            $(_this).find('.step2').addClass('animated fadeInUp');
+        }, 300);
+        setTimeout(function () {
+            $(_this).find('.succ').addClass('animated fadeInUp');
+        }, 400);
+        setTimeout(function () {
+            $(_this).find('.hint').addClass('animated fadeInUp');
+        }, 500);
+        setTimeout(function () {
+            $(_this).find('.iknow').addClass('animated fadeInUp');
+        }, 600);
+    },
+    //关闭蒙层
+    closeShareModal: function(){
+        $('.share_modal').css({opcity: 0});
+    },
+    openDialog:function(text){
+        $('.dialog-container').css({
+            opacity: 1
+        });
+        $('.dialog').css({
+            width: 600/64 +'rem'
+        });
+        $('.dialog_bd').text(text);
+        $('.dialog').addClass('active');
+    },
+    closeDialog:function() {
+        $('.dialog-container').css({
+            opacity: 0
+        });
+        $('.dialog').css({
+            width: 0
+        });
+        $('.dialog').removeClass('active');
+    },
 };

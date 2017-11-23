@@ -1,0 +1,66 @@
+//Created by lollipop 2017/11/23
+.share_modal {
+  opacity: 0;
+  .share-modal-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #373737;
+    background-color: rgba(55,55,55,.6);
+    z-index: 1000;
+  }
+  .share-modal-wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 5000;
+    .curve {
+      opacity: 0;
+      @include px2rem(top,112px);
+      @include px2rem(right,80px);
+      @include px2rem(width,183px);
+      @include px2rem(height,132px);
+    }
+    .steps {
+      margin: 0 auto;
+      @include px2rem(margin-top,272px);
+      @include px2rem(width,394px);
+      @include px2rem(height,226px);
+      position: relative;
+      .step1 {
+        opacity: 0;
+        top: 0;
+        @include px2rem(width,270px);
+        @include px2rem(height,44px);
+      }
+      .step2 {
+        opacity: 0;
+        bottom: 0;
+        @include px2rem(width,385px);
+        @include px2rem(height,140px);
+      }
+    }
+    .succ {
+      opacity: 0;
+      @include px2rem(top,542px);
+      @include px2rem(width,320px);
+      @include px2rem(height,52px);
+    }
+    .hint {
+      opacity: 0;
+      @include px2rem(top,610px);
+      @include px2rem(width,426px);
+      @include px2rem(height,21px);
+    }
+    .iknow {
+      opacity: 0;
+      @include px2rem(top,738px);
+      @include px2rem(width,248px);
+      @include px2rem(height,101px);
+    }
+  }
+}
