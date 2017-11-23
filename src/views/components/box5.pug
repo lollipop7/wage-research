@@ -58,5 +58,6 @@
                         img(src=`images/forms/question17/${index}.png`)
                         input.nair-radio-input(type="radio" name="hopgains", value=`${item}`)
                         span.nair-radio-inner
-    img.submit#submit.ani(src="images/forms/submit.png",swiper-animate-effect="slideInup",swiper-animate-duration=".5s",swiper-animate-delay=".99s")
+    a#submit.ani(href="javascript:void(0);",onclick="submitFormData()",swiper-animate-effect="slideInup",swiper-animate-duration=".5s",swiper-animate-delay=".99s")
+        img.submit(src="images/forms/submit.png")
     img.logo51jrq.ani(src="images/forms/logo51jrq.png",swiper-animate-effect="slideInup",swiper-animate-duration=".5s",swiper-animate-delay="1.09s")

@@ -46,12 +46,18 @@ var submitFormData = function () {
     }
     //9
     var months = $("input[name='months'][checked]").val();
+    if ('其他' == months){
+        months = $("input[name='months'][checked]").siblings('.nair-text-input').val();
+    }
     if("" == months){
         bundle.openDialog('每年支付月薪月数不能为空');
         return;
     }
     //10
     var othermonths = $("input[name='othermonths'][checked]").val();
+    if ('其他' == othermonths){
+        othermonths = $("input[name='othermonths'][checked]").siblings('.nair-text-input').val();
+    }
     if("" == othermonths){
         bundle.openDialog('年目标浮动奖金/佣金不能为空');
         return;
@@ -98,7 +104,26 @@ var submitFormData = function () {
         bundle.openDialog('理想薪酬涨幅不能为空');
         return;
     }
-    $.ajax({
+    console.log(`
+    问题1:${workyears},
+    问题2:${workyearinfinance},
+    问题3:${companynature},
+    问题4:${company},
+    问题5:${functions},
+    问题6:${positions},
+    问题7:${monthsalary},
+    问题8:${months},
+    问题9:${othermonths},
+    问题10:${allowance},
+    问题11:${gains},
+    问题12:${morethanbefore},
+    问题13:${wefare},
+    问题14:${jobchange},
+    问题15:${jobchange},
+    问题16:${hopindustry},
+    问题17:${hopgains},
+`)
+    /*$.ajax({
         url: '',
         type: '',
         data: {
@@ -123,5 +148,5 @@ var submitFormData = function () {
         success: function (data) {
             
         }
-    })
+    })*/
 }

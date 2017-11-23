@@ -130,6 +130,16 @@
           @include px2rem(height, 23px);
           left:0;
         }
+        .nair-text-input {
+          position: absolute;
+          @include px2rem(left, 90px);
+          @include px2rem(width, 62px);
+          bottom: 1px;
+          outline: none;
+          border: none;
+          background-color: transparent;
+          @include font-dpr(16px);
+        }
         .nair-radio-inner {
           position: absolute;
           left: 0;
