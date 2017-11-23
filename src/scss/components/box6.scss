@@ -3,20 +3,20 @@
  */
 .box6 {
   .arrow-down {
-    @include px2rem(bottom, 37px);
+    @include px2rem(top, 1069px);
   }
   .congra {
-    @include px2rem(top, 143px);
+    @include px2rem(top, 83px);
     @include px2rem(width, 175px);
     @include px2rem(height, 52px);
   }
   .income {
-    @include px2rem(top, 250px);
+    @include px2rem(top, 190px);
     @include px2rem(width, 173px);
     @include px2rem(height, 82px);
   }
   .beyond {
-    @include px2rem(margin-top, 418px);
+    @include px2rem(margin-top, 358px);
     @include px2rem(height, 34px);
     position: relative;
     .win {
@@ -31,11 +31,61 @@
     }
   }
   .hint {
-    @include px2rem(bottom, 478px);
+    @include px2rem(top, 418px);
     @include px2rem(width, 414px);
     @include px2rem(height, 26px);
   }
   .bubbles {
-
+    @include px2rem(margin-top, 108px);
+    @include px2rem(height, 248px);
+    position: relative;
+    .bubble-wrapper {
+      position: absolute;
+      &.bubble_1 {
+        @include px2rem(left, 102px);
+        @include px2rem(bottom, 0px);
+        @include px2rem(width, 136px);
+        @include px2rem(height, 156px);
+        img {
+          @include px2rem(width, 136px);
+          @include px2rem(height, 156px);
+        }
+      }
+      &.bubble_2 {
+        @include px2rem(left, 240px);
+        @include px2rem(top, 12px);
+        @include px2rem(width, 91px);
+        @include px2rem(height, 101px);
+        img {
+          @include px2rem(width, 91px);
+          @include px2rem(height, 101px);
+        }
+      }
+      &.bubble_3 {
+        @include px2rem(right, 236px);
+        @include px2rem(bottom, 0px);
+        @include px2rem(width, 102px);
+        @include px2rem(height, 112px);
+        img {
+          @include px2rem(width, 102px);
+          @include px2rem(height, 112px);
+        }
+      }
+      &.bubble_4 {
+        @include px2rem(right, 114px);
+        @include px2rem(top, 0px);
+        @include px2rem(width, 112px);
+        @include px2rem(height, 132px);
+        img {
+          @include px2rem(width, 112px);
+          @include px2rem(height, 132px);
+        }
+      }
+    }
+  }
+  .qr-code {
+    @include px2rem(top, 856px);
+    @include px2rem(width, 146px);
+    @include px2rem(height, 181px);
   }
 }

@@ -1,17 +1,18 @@
 //created by lollipop 2017/11/21
 .swiper-slide.box6(data-hash="slide6")
     //恭喜
-    img.congra.justify-center.ani(src="images/box7/congra.png",swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".19s")
-    img.income.justify-center.ani(src="images/box7/income.png",swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".29s")
+    img.congra.justify-center.ani(src="images/box6/congra.png",swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".19s")
+    img.income.justify-center.ani(src="images/box6/income.png",swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".29s")
     //完胜
     .beyond
-        img.win.justify-center.ani(src="images/box7/win.png",swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".39s")
-        img.num.justify-center.ani(src="images/box7/num.png",swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".49s")
-    img.hint.justify-center.ani(src="images/box7/hint.png",swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".59s")
+        img.win.justify-center.ani(src="images/box6/win.png",swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".39s")
+        img.num.justify-center.ani(src="images/box6/num.png",swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".49s")
+    //（您没有拖金融行业薪资后腿哦！）
+    img.hint.justify-center.ani(src="images/box6/hint.png",swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".59s")
     .bubbles
         - var bubbleList = [1,2,3,4]
             each item, index in bubbleList
-                .bubble-wrapper
-                    img.bubble.ani(src=`images/box7/0${item}.png`,swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=`1.${index+1}`)
-    img.qr-code.justify-center.ani(src=`images/box7/qr-code.png`,swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".69s")
+                .bubble-wrapper(class=`bubble_${item}`)
+                    img.bubble.ani(src=`images/box6/0${item}.png`,swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=`1.${index+1}`)
+    img.qr-code.justify-center.ani(src=`images/box6/qr-code.png`,swiper-animate-effect="zoomIn",swiper-animate-duration=".3s",swiper-animate-delay=".69s")
     .arrow-down

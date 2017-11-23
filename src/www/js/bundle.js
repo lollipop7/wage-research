@@ -1,6 +1,10 @@
 //Created by lollipop at 2017/11/21.
 $('document').ready(function(){
     bundle.init();
+    $('.nair-radio-input').click(function () {
+        $(this).siblings('.nair-radio-inner').addClass('active');
+        $(this).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
+    })
 });
 var bundle = {
     init: function() {
@@ -21,6 +25,9 @@ var bundle = {
             direction: 'vertical',
             pagination: '.swiper-pagination',
             hashnav:true,
+            // mousewheelControl : true,
+            nextButton:'.little-box',
+            autoHeight: true, //高度随内容变化
             onInit: function(swiper){//初始化之后执行
                 swiperAnimateCache(swiper);//隐藏动画元素
                 swiperAnimate(swiper);//初始化完成开始动画
@@ -64,11 +71,30 @@ var bundle = {
                     es.transitionDuration = speed + 'ms';
                 }
             }
-        })
+        });
+        var startScroll, touchStart, touchCurrent;
+        swiper.slides.on('touchstart', function (e) {
+            startScroll = this.scrollTop;
+            touchStart = e.targetTouches[0].pageY;
+        }, true);
+        swiper.slides.on('touchmove', function (e) {
+            touchCurrent = e.targetTouches[0].pageY;
+            var touchesDiff = touchCurrent - touchStart;
+            var slide = this;
+            var onlyScrolling =
+                ( slide.scrollHeight > slide.offsetHeight ) && //allow only when slide is scrollable
+                (
+                    ( touchesDiff < 0 && startScroll === 0 ) || //start from top edge to scroll bottom
+                    ( touchesDiff > 0 && startScroll === ( slide.scrollHeight - slide.offsetHeight ) ) || //start from bottom edge to scroll top
+                    ( startScroll > 0 && startScroll < ( slide.scrollHeight - slide.offsetHeight ) ) //start from the middle
+                );
+            if (onlyScrolling) {
+                e.stopPropagation();
+            }
+        }, true);
     },
     //预加载图片
     preloadImage: function(){
-        console.log('开始加载图片')
         var imgList = [];
         var pattern = /http:\/\/(\w|\W){1,}.(png|gif|jpg)/g;
         $('.preload').each(function(index,item){
@@ -79,7 +105,6 @@ var bundle = {
             imgList.push(item.src);
         })
         var totalCount = imgList.length;
-        console.log(imgList)
         var count = 0;
         //bind event
         var loadedAllImg = this.loadedAllImg.bind(this);

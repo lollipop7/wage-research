@@ -1,14 +1,4 @@
 //Created by lollipop 2017/11/22
-
-.box1,
-.box2,
-.box3,
-.box4,
-.box7 {
-  .arrow-down {
-    @include px2rem(bottom, 37px);
-  }
-}
 .box1,
 .box2,
 .box3,
@@ -30,7 +20,7 @@
   }
 
   .commited {
-    @include px2rem(top, 328px);
+    @include px2rem(margin-top, 328px);
     @include px2rem(margin-left, 50px);
     img {
       position: static;
@@ -39,7 +29,7 @@
         @include px2rem(height, 116px);
       }
       &.question2 {
-        @include px2rem(width, 542px);
+        @include px2rem(width, 543px);
         @include px2rem(height, 76px);
       }
       &.question3 {
@@ -98,7 +88,7 @@
         @include px2rem(width, 469px);
         @include px2rem(height, 39px);
       }
-      &.question16 {
+      &.question17 {
         @include px2rem(width, 495px);
         @include px2rem(height, 39px);
       }
@@ -116,8 +106,10 @@
         border: none;
         width: 90%;
         background-color: transparent;
+        @include font-dpr(16px);
       }
     }
+
     .choice {
       @include px2rem(margin, 10px);
       .label-container {
@@ -129,19 +121,87 @@
           display: inline-block;
           @include px2rem(height,23px);
         }
-        input {
+        .nair-radio-input {
+          display: inline-block;
           position: absolute;
-          left: 0;
+          opacity: 0;
+          z-index: 1;
           @include px2rem(width, 23px);
           @include px2rem(height, 23px);
-          outline: none;
+          left:0;
+        }
+        .nair-radio-inner {
+          position: absolute;
+          left: 0;
+          cursor: pointer;
+          @include px2rem(width, 23px);
+          @include px2rem(height, 23px);
+          &:after {
+            content: '';
+            display: table;
+            position: absolute;
+            @include px2rem(width, 11px);
+            @include px2rem(height, 11px);
+            top:0;
+            bottom:0;
+            left:0;
+            right: 0;
+            margin: auto;
+            background-color: #814141;
+            opacity: 0;
+            transform:scale(0);
+          }
+          &.active:after {
+            opacity: 1;
+            transform:scale(1);
+            transition: transform .3s cubic-bezier(.78,.14,.15,.86);
+          }
         }
       }
     }
   }
+  .submit {
+    margin: 0 auto;
+    position: static;
+    @include px2rem(margin-top, 40px);
+    @include px2rem(margin-bottom, 40px);
+    @include px2rem(width, 253px);
+    @include px2rem(height, 77px);
+  }
+  .logo51jrq {
+    position: static;
+    margin: 0 auto;
+    @include px2rem(margin-bottom, 75px);
+    &.justify-center {
+      position: absolute;
+      @include px2rem(bottom, 113px);
+      @include px2rem(margin-bottom, 0px);
+    }
+    @include px2rem(width, 200px);
+    @include px2rem(height, 61px);
+  }
 }
-.box0 {
-  .delay {
-    animation: swing-move  1s .3s infinite alternate ease-in-out;
+.box1,
+.box2,
+.box3,
+.box4,
+.box7 {
+  .arrow-down {
+    position: static;
+    @include px2rem(margin-top, 27px);
+    @include px2rem(margin-bottom, 27px);
+    &.justify-center {
+      position: absolute;
+      @include px2rem(bottom, 66px);
+      @include px2rem(margin-bottom, 0px);
+    }
+  }
+}
+.box4,
+.box5 {
+  .label-text {
+    input {
+      @include px2rem(padding-left, 20px);
+    }
   }
 }

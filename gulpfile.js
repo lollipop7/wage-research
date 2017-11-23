@@ -22,6 +22,7 @@ const jsFileName = argv.file || 'index';
  */
 const gulp  = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
+    pug = require('pug'),
     $ = require('gulp-load-plugins')();
 
 //dist folder
@@ -41,7 +42,7 @@ gulp.task('compile:pug', () => {
     _.each(fileArray, pugFileName => {
         let templateStr = fs.readFileSync(join(viewDir, `${pugFileName}.pug`), 'utf8'),
             htmlTemplate = pug.render(templateStr, {
-                filename: join(viewDir, `includes/head.pug`)
+                filename: join(viewDir, `head.pug`)
             });
         fs.writeFile(join(srcDir,`www/${pugFileName}.html`), htmlTemplate, err => {
             if(err) throw new Error(err);
@@ -61,12 +62,14 @@ gulp.task('compile:pug:watch', () => {
 
 //compile scss to css
 gulp.task('compile:scss', () => {
-    return gulp.src(join(scssDir, 'index.scss'))
-        .pipe(sourcemaps.init())
-        .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
-        .pipe($.autoprefixer())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(join(wwwDir,'styles')))
+    fileArray.forEach(pugFileName=>{
+        return gulp.src(join(scssDir,`${pugFileName}.scss`))
+            .pipe(sourcemaps.init())
+            .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
+            .pipe($.autoprefixer())
+            .pipe(sourcemaps.write())
+            .pipe(gulp.dest(join(wwwDir,'styles')))
+    });
 });
 
 //compile scss watch

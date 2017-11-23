@@ -1,3 +1,37 @@
 /**
  * Created by lollipop at 
  */
+.box7 {
+  .computed {
+    @include px2rem(top, 84px);
+    @include px2rem(width, 233px);
+    @include px2rem(height, 90px);
+  }
+  .num {
+    @include px2rem(top, 213px);
+    @include px2rem(width, 216px);
+    @include px2rem(height, 55px);
+  }
+  .radar {
+    @include px2rem(margin-top, 325px);
+    .chart {
+      @include px2rem(width, 444px);
+      @include px2rem(height, 403px);
+    }
+  }
+  .lemons {
+    @include px2rem(top, 779px);
+    @include px2rem(width, 91px);
+    @include px2rem(height, 18px);
+  }
+  .dance {
+    @include px2rem(top, 826px);
+    @include px2rem(width, 538px);
+    @include px2rem(height, 47px);
+  }
+  .logo51jrq {
+    @include px2rem(top, 937px);
+    @include px2rem(width, 200px);
+    @include px2rem(height, 61px);
+  }
+}

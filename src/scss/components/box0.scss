@@ -9,36 +9,38 @@
   }
   .you {
     @include px2rem(top, 260px);
-    @include px2rem(width, 402px);
-    @include px2rem(height, 157px);
+    @include px2rem(width, 281px);
+    @include px2rem(height, 110px);
   }
   .whether {
-    @include px2rem(top, 486px);
+    @include px2rem(top, 436px);
     @include px2rem(width, 529px);
     @include px2rem(height, 63px);
   }
   .delay {
-    @include px2rem(top, 456px);
+    animation: swing-move  1s .3s infinite alternate ease-in-out;
+    @include px2rem(top, 406px);
     @include px2rem(left, 194px);
     @include px2rem(width, 111px);
     @include px2rem(height, 99px);
   }
   .leg {
-    @include px2rem(top, 596px);
+    @include px2rem(top, 546px);
     @include px2rem(left, 161px);
     @include px2rem(width, 315px);
     @include px2rem(height, 73px);
   }
   .question {
-    @include px2rem(top, 590px);
+    @include px2rem(top, 540px);
     @include px2rem(right, 98px);
     @include px2rem(width, 57px);
     @include px2rem(height, 77px);
   }
   .little-box {
+    animation: transferHighlightIn .5s .3s infinite alternate ease-in-out;
     @include px2rem(width, 485px);
     @include px2rem(height, 82px);
-    @include px2rem(top, 715px);
+    @include px2rem(top, 665px);
     .little-bg {
       @include px2rem(top, 0px);
       @include px2rem(width, 485px);
@@ -50,8 +52,11 @@
     }
   }
   .alarm {
+    //position: static;
+    //margin: 0 auto;
+    //@include px2rem(margin-top, 780px);
     @include px2rem(bottom, 94px);
-    @include px2rem(width, 432px);
-    @include px2rem(height, 222px);
+    @include px2rem(width, 260px);
+    @include px2rem(height, 141px);
   }
 }

@@ -2,7 +2,7 @@
 .swiper-slide.preload.box1(data-hash="slide1")
     include ../includes/header
     img.page-num.ani(src="images/forms/1-5.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
-    ul.commited.justify-center
+    ul.commited
         //问题1
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
             .label-text
@@ -19,18 +19,19 @@
             .choice
                 - var thirdList = [1,2,3,4,5,6,7,8,9,10,11]
                     each item, index in thirdList
-                        .label-container
-                            label
-                                img(src=`images/forms/question3/${item}.png`)
-                                input(type="radio" name="3", value=`${item}`)
+                        label.label-container
+                            img(src=`images/forms/question3/${item}.png`)
+                            input.nair-radio-input(type="radio" name="3", value=`${item}`)
+                            span.nair-radio-inner
         //问题4
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".59s")
             img(src="images/forms/question4.png", class="question4")
             .choice
                 - var fourthList = [1,2,3,4]
-                each item, index in fourthList
-                    .label-container
-                        label
+                    each item, index in fourthList
+                        label.label-container
                             img(src=`images/forms/question4/${item}.png`)
-                            input(type="radio" name="4", value=`${item}`)
+                            input.nair-radio-input(type="radio" name="4", value=`${item}`)
+                            span.nair-radio-inner
+    img.logo51jrq.ani(src="images/forms/logo51jrq.png",swiper-animate-effect="slideInup",swiper-animate-duration=".5s",swiper-animate-delay="1.09s")
     .arrow-down
