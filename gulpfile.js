@@ -108,7 +108,7 @@ gulp.task('rename', () => {
 
 gulp.task('uglify', (cb) => {
     pump([
-            gulp.src(join(srcDir, `www/js/${jsFileName}.js`)),
+            gulp.src(join(srcDir, `scripts/*.js`)),
             $.uglify(),
             gulp.dest(join(distDir, 'js'))
         ],
