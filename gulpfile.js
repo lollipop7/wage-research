@@ -99,21 +99,5 @@ gulp.task('base64:watch', () => {
 //web server
 gulp.task('ws', ['compile:pug:watch', 'compile:scss:watch', 'base64:watch'], err => {});
 
-//rename file
-gulp.task('rename', () => {
-    gulp.src(join(distDir, `js/${jsFileName}.js`))
-        .pipe($.rename(`js/${jsFileName}.min.js`))
-        .pipe(gulp.dest(join(wwwDir)))
-});
 
-gulp.task('uglify', (cb) => {
-    pump([
-            gulp.src(join(srcDir, `scripts/*.js`)),
-            $.uglify(),
-            gulp.dest(join(distDir, 'js'))
-        ],
-        cb
-    );
-});
 
-gulp.task('compress', ['uglify','rename'],err=>{});

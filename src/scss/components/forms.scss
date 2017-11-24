@@ -170,6 +170,21 @@
       }
     }
   }
+  .page-wrapper {
+    @include px2rem(margin,40px);
+    @include px2rem(height, 47px);
+    position: relative;
+    img {
+      @include px2rem(width, 161px);
+      @include px2rem(height, 59px);
+    }
+    .before {
+      left: 0;
+    }
+    .after {
+      right: 0;
+    }
+  }
   .submit {
     margin: 0 auto;
     position: static;
