@@ -116,3 +116,4 @@ gulp.task('uglify', function (cb) {
 
 gulp.task('compress',['uglify','rename'],err=>{
 });
+
