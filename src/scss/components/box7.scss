@@ -8,14 +8,22 @@
     @include px2rem(height, 90px);
   }
   .num {
+    display: block;
+    font-family: 'bebas';
+    @include font-dpr(45px);
+    color: #f4b743;
     @include px2rem(top, 213px);
-    @include px2rem(width, 216px);
-    @include px2rem(height, 55px);
+    @include px2rem(width, 250px);
+    @include px2rem(height, 90px);
+    @include px2rem(line-height, 90px);
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(208, 82, 113, 1)), to(rgba(255, 151, 28, 1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .radar {
     @include px2rem(margin-top, 325px);
     .chart {
-      @include px2rem(width, 444px);
+      @include px2rem(width, 538px);
       @include px2rem(height, 403px);
     }
   }

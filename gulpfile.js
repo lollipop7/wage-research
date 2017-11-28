@@ -42,16 +42,14 @@ gulp.task('compile:pug', () => {
     _.each(fileArray, pugFileName => {
         let templateStr = fs.readFileSync(join(viewDir, `${pugFileName}.pug`), 'utf8'),
             htmlTemplate = pug.render(templateStr, {
-                filename: join(viewDir, `head.pug`)
+                filename: join(viewDir, `head.pug`),
+                locals : require(join(srcDir,'data/data.js'))
             });
         fs.writeFile(join(srcDir,`www/${pugFileName}.html`), htmlTemplate, err => {
             if(err) throw new Error(err);
             console.log(`${pugFileName} is saved`)
         })
     });
-    /*return gulp.src(join(viewDir, 'index.pug'))
-        .pipe($.pug({locals: require(join(srcDir, 'data/data.js'))}))
-        .pipe(gulp.dest(wwwDir))*/
 });
 
 //compile pug watch
@@ -97,6 +95,24 @@ gulp.task('base64:watch', () => {
 });
 
 //web server
-gulp.task('ws', ['compile:pug:watch', 'compile:scss:watch', 'base64:watch'], err => {});
+gulp.task('ws', ['compile:pug:watch', 'compile:scss:watch', 'base64:watch','compress'], err => {});
 
+//rename file
+gulp.task('rename',function(){
+    gulp.src(join(distDir,`js/bundle.js`))
+        .pipe($.rename(`js/bundle.min.js`))
+        .pipe(gulp.dest(join(wwwDir)))
+});
 
+gulp.task('uglify', function (cb) {
+    pump([
+            gulp.src(join(srcDir,`scripts/bundle.js`)),
+            $.uglify(),
+            gulp.dest('dist/js')
+        ],
+        cb
+    );
+});
+
+gulp.task('compress',['uglify','rename'],err=>{
+});

@@ -1,6 +1,14 @@
 /**
  * Created by lollipop at 
  */
+@font-face {
+  font-family: 'bebas';
+  src: url(../images/bebas.ttf);
+}
+@font-face {
+  font-family: 'fzktjt';
+  src: url(../images/fzktjt.ttf);
+}
 .box6 {
   .arrow-down {
     @include px2rem(top, 1069px);
@@ -15,6 +23,12 @@
     @include px2rem(width, 173px);
     @include px2rem(height, 82px);
   }
+  .seal {
+    @include px2rem(top, 145px);
+    @include px2rem(left, 344px);
+    @include px2rem(width, 296px);
+    @include px2rem(height, 328px);
+  }
   .beyond {
     @include px2rem(margin-top, 358px);
     @include px2rem(height, 34px);
@@ -25,6 +39,11 @@
       @include px2rem(height, 34px);
     }
     .num {
+      display: block;
+      text-align: center;
+      font-family: 'bebas';
+      color: #e6832a;
+      @include font-dpr(45px);
       @include px2rem(bottom, 0px);
       @include px2rem(width, 148px);
       @include px2rem(height, 82px);
@@ -41,6 +60,18 @@
     position: relative;
     .bubble-wrapper {
       position: absolute;
+      display: block;
+      text-align: center;
+      img {
+        z-index: -1;
+      }
+      span {
+        display: inline-block;
+        font-family: 'fzktjt';
+        color: #fff;
+        margin-top: 25%;
+        //@include font-dpr(24px);
+      }
       &.bubble_1 {
         @include px2rem(left, 102px);
         @include px2rem(bottom, 0px);

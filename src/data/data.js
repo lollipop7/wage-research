@@ -1,16 +1,4 @@
 //Created by lollipop at 2017/11/21.
 module.exports = {
-    question3: [
-        { type: "radio", name: "three", value: "1"},
-        { type: "radio", name: "three", value: "2"},
-        { type: "radio", name: "three", value: "3"},
-        { type: "radio", name: "three", value: "4"},
-        { type: "radio", name: "three", value: "5"},
-        { type: "radio", name: "three", value: "6"},
-        { type: "radio", name: "three", value: "7"},
-        { type: "radio", name: "three", value: "8"},
-        { type: "radio", name: "three", value: "9"},
-        { type: "radio", name: "three", value: "10"},
-        { type: "radio", name: "three", value: "11"}
-    ]
+    thirdList: {1:'银行',2:'证券',3:'基金/互联网基金',4:'保险/互联网保险',5:'期货',6:'信托/互联网信托',7:'互联网金融',8:'互联网支付',9:'网络借贷',10:'大数据征信',11:'互联网金融资讯'}
 }

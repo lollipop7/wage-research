@@ -2,13 +2,12 @@
 $('document').ready(function(){
     bundle.init();
     $('.nair-radio-input').click(function () {
-        // console.log($(this).val())
-        $(this).siblings('.nair-radio-inner').addClass('active');
-        $(this).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
+        var _obj = this;
+        bundle.addClassActive(_obj)
+        // $(this).siblings('.nair-radio-inner').addClass('active');
+        // $(this).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
     });
-    // $('.nair-radio-input').click(function () {
-    //     console.log($(this).attr("checked"))
-    // })
+
     $('#iknow').click(function () {
         $('.share_modal').css({opacity: 0});
         bundle.closeShareModal();
@@ -46,6 +45,9 @@ var bundle = {
             },
             longSwipesMs : 1000, //定义longSwipes的时间（单位ms），超过则属于longSwipes
             watchSlidesProgress: true, //开启这个参数来计算每个slide的progress(进度)，Swiper的progress无需设置即开启。
+            onInit: function(swiper) {
+                swiper.myactive = 0;
+            },
             onProgress: function(swiper) {
                 for (var i = 0; i < swiper.slides.length; i++) {
                     var slide = swiper.slides[i];
@@ -67,6 +69,7 @@ var bundle = {
                 }
             },
             onTransitionEnd: function(swiper){//回调函数，过渡结束时触发，接收Swiper实例作为参数。
+                swiper.myactive = swiper.activeIndex;
                 swiperAnimate(swiper);
             },
             onSetTransition: function(swiper, speed) {//回调函数，每次当Swiper开始过渡动画时持续执行。transtion获取到的是Swiper的speed值。
@@ -141,7 +144,7 @@ var bundle = {
     },
     //更改进度条
     loadImgProgress: function(currentNum, totalNum){
-        $('.loading-container .number').text(Math.floor(currentNum/totalNum*100)+`%`);
+        $('.loading-container .number').text(Math.floor(currentNum/totalNum*100)+'%');
     },
     //图片加载全部后的完成事件
     loadedAllImg: function(){
@@ -208,7 +211,7 @@ var bundle = {
         var _ques9Checked = $('#ques9').find('input[name=\'months\']:checked');
         months = $(_ques9Checked).val()
         if (months == '其它' || months == '其他'){
-            months = $(_ques9Checked).siblings('.nair-text-input').val()+`个月`;
+            months = $(_ques9Checked).siblings('.nair-text-input').val()+'个月';
         }
         return months;
     },
@@ -217,16 +220,18 @@ var bundle = {
         var _ques10Checked = $('#ques10').find('input[name=\'othermonths\']:checked');
         othermonths = $(_ques10Checked).val();
         if (othermonths == '其它' || othermonths == '其他'){
-            othermonths = $(_ques10Checked).siblings('.nair-text-input').val()+`个月`;
+            othermonths = $(_ques10Checked).siblings('.nair-text-input').val()+'个月';
         }
         return othermonths;
     },
     setChecked: function (obj) {
-        $(obj).siblings('.nair-radio-input').attr("checked",true)
+        $(obj).siblings('.nair-radio-input').attr("checked",true);
+        this.addClassActive(obj);
+        // $(obj).siblings('.nair-radio-inner').addClass('active');
+        // $(obj).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
+    },
+    addClassActive: function (obj){
         $(obj).siblings('.nair-radio-inner').addClass('active');
         $(obj).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
-    },
-    postVal: function (obj) {
-       obj.value;
     }
 };
