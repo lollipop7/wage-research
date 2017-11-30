@@ -1,10 +1,43 @@
 /**
  * Created by lollipop on 2017/11/27
  */
-var dataGR = [50, 30, 20, 40, 60, 45];
+
+$.ajax({
+    url: 'http://192.168.1.251:8080/vita/salary/result',
+    data: {
+        openid: "stranger"
+    },
+    success: function(data){
+        console.log(JSON.parse(data));
+        //展示radarChart
+        var countlist= JSON.parse(data).d.countlist;
+        var yearincomdescribe = JSON.parse(data).d.yearincomdescribe; //您的年收入为500.0还有很大的上升空间
+        var worktimedescribe = JSON.parse(data).d.worktimedescribe; //"老腊肉"
+        var otherdescribe = JSON.parse(data).d.otherdescribe; //"涨那么多？茅台当水喝!"
+        var industrydescribe = JSON.parse(data).d.industrydescribe; //"高大上传统金融行业"
+        var functiondescribe = JSON.parse(data).d.functiondescribe; //"企业发动机"
+        for ( var i = 0; i < countlist.length; i++) {
+            if(countlist[i] > 100) {
+                countlist[i] = 100;
+            }
+        }
+        radarChart.initRadar(countlist);
+        // $('#salary').text(yearincomdescribe);
+        $('#bubble_1 span').text(industrydescribe);
+        // $('#bubble_2 span').text(worktimedescribe);
+        $('#bubble_3 span').text(worktimedescribe);
+        $('#bubble_4 span').text(functiondescribe);
+    },
+    error:function(XMLHttpRequest, textStatus, errorThrown) {
+        console.log(XMLHttpRequest.status);
+        console.log(XMLHttpRequest.readyState);
+        console.log(textStatus);
+    }
+});
+
 var radarChart = {
     // 绘制图表。
-   initRadar:function(){
+   initRadar:function(dataGR){
        echarts.init(document.getElementById('main')).setOption({
            baseOption: {
                title: {
@@ -20,7 +53,14 @@ var radarChart = {
                        textStyle: {
                            fontSize: 20,
                            color: '#5192de',
-                       }
+                       },
+                       formatter: (text) => {
+                           text = text.replace(/\S{2}/g, function(match) {
+                               // console.log(match)
+                               return match + '\n'
+                           })
+                           return text
+                       },
                    },
                    indicator: [
                        { name: '月基本薪资', max: 100},
@@ -56,7 +96,7 @@ var radarChart = {
                        data : [
                            {
                                value : dataGR,
-                               name : '预算分配（Allocated Budget）'
+                               name : '年收入分布'
                            }
                        ],
                        itemStyle: {
@@ -76,3 +116,4 @@ var radarChart = {
        });
    }
 }
+// radarChart.initRadar();

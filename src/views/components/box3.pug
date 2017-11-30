@@ -18,7 +18,7 @@
                         img(src=`images/forms/question9/${index}.png`)
                         if index == 5
                             input.nair-radio-input(type="radio",name="months", value=`${item}`)
-                            input.nair-text-input(type="number",name="monthsOth",onclick="bundle.setChecked(this)")
+                            input.nair-text-input(type="number",name="monthsOth",onclick="bundle.setChecked(this)",oninput="if(value.length>2)value=value.slice(0,2)")
                         else
                             input.nair-radio-input(type="radio",name="months", value=`${item}`)
                         span.nair-radio-inner

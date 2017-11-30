@@ -8,17 +8,11 @@ function abc() {
         },
         success: function(data){
             var d = eval("("+data+")");
-            d.jsApiList = [
-                'onMenuShareTimeline',
+            d.jsApiList = ['onMenuShareTimeline',
                 'onMenuShareAppMessage',
                 'getNetworkType',
-                'startRecord',
-                'stopRecord',
-                'uploadVoice',
-                'playVoice',
-                'downloadVoice',
-                'onVoicePlayEnd',
-                'onVoiceRecordEnd'];
+                'previewImage',
+                'checkJsApi'];
             wx.config(d);
         },
         error: function(xhr, type){
@@ -54,14 +48,14 @@ wx.ready(function(){
 
         title: '别人眼中金融高薪的你，收入水平达标了吗？一分钟给你薪酬竞争力分析报告', // 分享标题
 
-        link: 'http://www.51jrq.com/wx/wage-research/www/index.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: 'http://www.51jrq.com/wx/xcbg/index.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
 
-        imgUrl: 'http://www.51jrq.com/wx/wage-research/www/images/head.png', // 分享图标
+        imgUrl: 'http://www.51jrq.com/wx/xcbg/images/header.png', // 分享图标
 
         success: function () {
 
             // 用户确认分享后执行的回调函数
-
+            $('.box6, .box7').css({display: 'block'});
         },
 
         cancel: function () {
@@ -78,9 +72,9 @@ wx.ready(function(){
 
         desc: '51金融圈将以严谨的职业态度对您提交的数据资料严格保密。此问卷仅在本次调研活动中做分析依据使用，请放心作答。', // 分享描述
 
-        link: 'http://www.51jrq.com/wx/wage-research/www/index.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: 'http://www.51jrq.com/wx/xcbg/index.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
 
-        imgUrl: 'http://www.51jrq.com/wx/wage-research/www/images/head.png', // 分享图标
+        imgUrl: 'http://www.51jrq.com/wx/xcbg/images/header.png', // 分享图标
 
         type: '', // 分享类型,music、video或link，不填默认为link
 
@@ -89,7 +83,7 @@ wx.ready(function(){
         success: function () {
 
             // 用户确认分享后执行的回调函数
-
+            $('.box6, .box7').css({display: 'block'});
         },
 
         cancel: function () {

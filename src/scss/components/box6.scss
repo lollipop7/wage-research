@@ -70,7 +70,7 @@
         font-family: 'fzktjt';
         color: #fff;
         margin-top: 25%;
-        //@include font-dpr(24px);
+        @include font-dpr(12px);
       }
       &.bubble_1 {
         @include px2rem(left, 102px);

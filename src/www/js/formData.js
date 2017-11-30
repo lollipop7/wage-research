@@ -14,6 +14,7 @@ var submitFormData = function () {
     }
     //3
     var industry = $("input[name='industry']:checked").val();
+    console.log(industry)
     if("" == industry){
         bundle.openDialog('3.所处的行业不能为空');
         return;
@@ -82,23 +83,26 @@ var submitFormData = function () {
     }
     //15
     var jobchange = $("input[name='jobchange']:checked").val();
+    var hopindustry = $("input[name='hopindustry']:checked").val();
+    var hopgains = $("input[name='hopgains']:checked").val();
     if("" == jobchange){
         bundle.openDialog('15.是否有跳槽的打算不能为空');
         return;
     }
     if (jobchange == 1){
         //16
-        var hopindustry = $("input[name='hopindustry']:checked").val();
         if("" == hopindustry){
             bundle.openDialog('16.期望的行业不能为空');
             return;
         }
         //17
-        var hopgains = $("input[name='hopgains']:checked").val();
         if("" == hopgains){
             bundle.openDialog('17.理想薪酬涨幅不能为空');
             return;
         }
+    }else {
+        hopindustry = '无';
+        hopgains = 0;
     }
 
     console.log(`
@@ -120,42 +124,43 @@ var submitFormData = function () {
         问题16 hopindustry:${hopindustry},
         问题17 hopgains:${(parseFloat(hopgains)/100).toFixed(2)},
     `)
-    $('#submit').click(function () {
-        $('.share_modal').css({opacity: 1});
-        bundle.openShareModal();
-    });
+
     /*console.log(`
         问题9:${months},
         问题10:${othermonths},
     `)*/
+    var formData = {
+        workyears: workyears,
+        workyearinfinance: workyearinfinance,
+        industry: industry,
+        companynature: companynature,
+        company: company,
+        functions: functions,
+        positions: positions,
+        monthsalary: parseInt(monthsalary),
+        months: parseInt(months),
+        othermonths: parseInt(othermonths),
+        allowance: parseInt(allowance),
+        gains: ((parseFloat(gains))/100).toFixed(2),
+        morethanbefore: morethanbefore,
+        wefare: parseInt(wefare),
+        jobchange: jobchange,
+        hopindustry: hopindustry,
+        hopgains: (parseFloat(hopgains)/100).toFixed(2),
+        openid: "stranger"
+    };
     $.ajax({
         url: 'http://192.168.1.251:8080/vita/salary/count',
         type: 'post',
-        dataType: 'json',
-        xhrFields:{'Access-Control-Allow-Origin': '*'},
-        data: {
-            workyears: workyears,
-            workyearinfinance: workyearinfinance,
-            industry: industry,
-            companynature: companynature,
-            company: company,
-            functions: functions,
-            positions: positions,
-            monthsalary: parseInt(monthsalary),
-            months: parseInt(months),
-            othermonths: parseInt(othermonths),
-            allowance: parseInt(allowance),
-            gains: ((parseFloat(gains))/100).toFixed(2),
-            morethanbefore: morethanbefore,
-            wefare: parseInt(wefare),
-            jobchange: jobchange,
-            hopindustry: hopindustry,
-            hopgains: (parseFloat(hopgains)/100).toFixed(2)
-        },
+        contentType: 'application/x-www-form-urlencoded',    // 可省略
+        processData: true,        // 可省略
+        dataType:'json',
+        async:false,
+        data: formData,
         success: function (data) {
-            console.log(data)
-            //展示radarChart
-            radarChart.initRadar();
+            if(data.result) {
+                bundle.openShareModal();
+            }
         },
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             console.log(XMLHttpRequest.status);

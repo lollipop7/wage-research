@@ -2,6 +2,7 @@
 $('document').ready(function(){
     bundle.init();
     $('.nair-radio-input').click(function () {
+        console.log($(this).val());
         var _obj = this;
         bundle.addClassActive(_obj)
         // $(this).siblings('.nair-radio-inner').addClass('active');
@@ -76,11 +77,11 @@ var bundle = {
                 for (var i = 0; i < swiper.slides.length; i++) {
                     es = swiper.slides[i].style;
                     es.webkitTransitionDuration =
-                    es.MsTransitionDuration =
-                    es.msTransitionDuration =
-                    es.MozTransitionDuration =
-                    es.OTransitionDuration =
-                    es.transitionDuration = speed + 'ms';
+                        es.MsTransitionDuration =
+                            es.msTransitionDuration =
+                                es.MozTransitionDuration =
+                                    es.OTransitionDuration =
+                                        es.transitionDuration = speed + 'ms';
                 }
             }
         });

@@ -1,6 +1,7 @@
 /**
  * Created by lollipop at 
  */
+
 .box7 {
   .computed {
     @include px2rem(top, 84px);
@@ -8,17 +9,11 @@
     @include px2rem(height, 90px);
   }
   .num {
-    display: block;
     font-family: 'bebas';
-    @include font-dpr(45px);
-    color: #f4b743;
     @include px2rem(top, 213px);
     @include px2rem(width, 250px);
     @include px2rem(height, 90px);
     @include px2rem(line-height, 90px);
-    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(208, 82, 113, 1)), to(rgba(255, 151, 28, 1)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
   .radar {
     @include px2rem(margin-top, 325px);
@@ -32,14 +27,31 @@
     @include px2rem(width, 91px);
     @include px2rem(height, 18px);
   }
-  .dance {
+  .benefit {
     @include px2rem(top, 826px);
     @include px2rem(width, 538px);
     @include px2rem(height, 47px);
+    background-image: url(../images/box7/4.png);
+    display: block;
   }
   .logo51jrq {
     @include px2rem(top, 937px);
     @include px2rem(width, 200px);
     @include px2rem(height, 61px);
   }
+
+  //文字样式
+  .num{
+    display: block;
+    @include font-dpr(45px);
+    color: #f4b743;
+    text-align: center;
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(208, 82, 113, 1)), to(rgba(255, 151, 28, 1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.box6,
+.box7 {
+  display: block;
 }

@@ -7,7 +7,7 @@
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
             img(src="images/forms/question12.png", class="question12")
             .choice
-                - var tewlevethList = {1:'5%以内',2:'5%-8%',3:'8%-10%',4:'10%-15%',5:'15%-20%',6:'20%以上'}
+                - var tewlevethList = {1:5,2:8,3:10,4:13,5:15,6:20}
                 each item, index in tewlevethList
                     label.label-container
                         img(src=`images/forms/question12/${index}.png`)
@@ -52,7 +52,7 @@
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".89s")
             img(src="images/forms/question17.png", class="question17")
             .choice
-                - var seventeenthList = {1:'15%',2:'20%',3:'25%',4:'30%',5:'35%',6:'其它'}
+                - var seventeenthList = {1:'15',2:'20',3:'25',4:'30',5:'35',6:'40'}
                 each item, index in seventeenthList
                     label.label-container
                         img(src=`images/forms/question17/${index}.png`)

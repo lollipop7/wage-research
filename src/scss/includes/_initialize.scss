@@ -36,3 +36,8 @@ li,p {
   height: 100%;
   margin: 0 auto;
 }
+[data-dpr="1"] {
+  html,body,.wrapper {
+    max-width: 640px;
+  }
+}
