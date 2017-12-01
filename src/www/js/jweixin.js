@@ -1,5 +1,39 @@
 //Created by lollipop at 2017/11/21.
 //微信JSSDK https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
+
+/*function GetQueryString(name){
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null)return  unescape(r[2]); return null;
+}
+
+var all = true; //是否填完
+var src = window.location.href;
+var openid = '';
+var nowid = '';
+var num = '';
+
+nowid = 'xxx'; //后台 获取 表示当前用户的openid， 被分享者的openid
+if (GetQueryString('openid') != null) {
+    openid = GetQueryString('openid'); //分享者的openid
+}
+
+var shareObj = {
+    title: '薪酬竞争力分析报告，恭喜你完胜'+num+'的人',
+    link: '',
+    imgUrl: 'http://www.51jrq.com/wx/xcbg/images/header.png'
+};
+
+if (all) { //判断是否填完
+    if (openid == nowid) {
+        shareObj.link = 'http://www.51jrq.com/wx/xcbg/index.html?openid='+openid;
+    } else {
+        shareObj.link = 'http://www.51jrq.com/wx/xcbg/index.html?openid='+nowid;
+    }
+}else { //未填完
+
+}*/
+
 function abc() {
     $.ajax({
         url: 'http://www.51jrq.com/weixin/token',
@@ -54,8 +88,7 @@ wx.ready(function(){
 
         success: function () {
 
-            // 用户确认分享后执行的回调函数
-            $('.box6, .box7').css({display: 'block'});
+
         },
 
         cancel: function () {
@@ -82,8 +115,6 @@ wx.ready(function(){
 
         success: function () {
 
-            // 用户确认分享后执行的回调函数
-            $('.box6, .box7').css({display: 'block'});
         },
 
         cancel: function () {

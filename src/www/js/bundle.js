@@ -9,9 +9,6 @@ $('document').ready(function(){
         // $(this).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
     });
 
-    $('#iknow').click(function () {
-        bundle.closeShareModal();
-    });
 });
 var bundle = {
     init: function() {
@@ -36,6 +33,8 @@ var bundle = {
             prevButton:'.prev-page',
             nextButton:'.next-page',
             autoHeight: true, //高度随内容变化
+            observer: true,//修改swiper自己或子元素时，自动初始化swiper
+            observeParents: true,//修改swiper的父元素时，自动初始化swiper
             onInit: function(swiper){//初始化之后执行
                 swiperAnimateCache(swiper);//隐藏动画元素
                 swiperAnimate(swiper);//初始化完成开始动画

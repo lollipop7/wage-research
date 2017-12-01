@@ -146,8 +146,7 @@ var submitFormData = function () {
         wefare: parseInt(wefare),
         jobchange: jobchange,
         hopindustry: hopindustry,
-        hopgains: (parseFloat(hopgains)/100).toFixed(2),
-        openid: "stranger"
+        hopgains: (parseFloat(hopgains)/100).toFixed(2)
     };
     $.ajax({
         url: 'http://192.168.1.251:8080/vita/salary/count',
@@ -160,6 +159,11 @@ var submitFormData = function () {
         success: function (data) {
             if(data.result) {
                 bundle.openShareModal();
+                $('#iknow').click(function () {
+                    bundle.closeShareModal();
+                    $('.box6, .box7').css({display: 'block'});
+                    radarChart.getNair();
+                });
             }
         },
         error:function(XMLHttpRequest, textStatus, errorThrown) {
