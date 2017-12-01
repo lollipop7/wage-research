@@ -1,6 +1,5 @@
 //Created by lollipop at 2017/11/21.
 
-var answerid = undefined;
 var submitFormData = function () {
     //1
     var workyears = $('#workyears').val();
@@ -106,8 +105,24 @@ var submitFormData = function () {
         hopindustry = '无';
         hopgains = 0;
     }
-
-    console.log(`
+    /*var workyears = 2;
+    var workyearinfinance = 2;
+    var industry = '银行';
+    var companynature = '外商独资';
+    var company = '';
+    var functions = '高管';
+    var positions = '高层管理';
+    var monthsalary = 90000;
+    var months = 12;
+    var othermonths = 5;
+    var allowance = 15000;
+    var gains = 20;
+    var morethanbefore = 1;
+    var wefare = 0;
+    var jobchange = 0;
+    var hopindustry = 0;
+    var hopgains = 0;*/
+        console.log(`
         问题1 workyears:${workyears},
         问题2 workyearinfinance:${workyearinfinance},
         问题3 industry:${industry},
@@ -163,10 +178,8 @@ var submitFormData = function () {
                 bundle.openShareModal();
                 $('#iknow').click(function () {
                     bundle.closeShareModal();
-                    $('.box6, .box7').css({display: 'block'});
-
                     // radarChart.getNair(answerid);
-                    window.open('nair.html?answerid='+data.d.answerid,'_self');
+                    window.location.href = 'nair.html?answerid='+data.d.answerid;
                 });
             }
         },

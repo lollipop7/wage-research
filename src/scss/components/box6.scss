@@ -51,12 +51,16 @@
   }
   .hint {
     @include px2rem(top, 418px);
-    @include px2rem(width, 414px);
+    @include px2rem(width, 640px);
     @include px2rem(height, 26px);
+    font-family: 'fzktjt';
+    color: #fff;
+    text-align: center;
+    @include font-dpr(16px);
   }
   .bubbles {
     @include px2rem(margin-top, 108px);
-    @include px2rem(height, 248px);
+    @include px2rem(height, 257px);
     position: relative;
     .bubble-wrapper {
       position: absolute;
@@ -69,47 +73,47 @@
         display: inline-block;
         font-family: 'fzktjt';
         color: #fff;
-        margin-top: 25%;
+        margin-top: 30%;
         @include font-dpr(12px);
       }
       &.bubble_1 {
-        @include px2rem(left, 102px);
+        @include px2rem(left, 96px);
         @include px2rem(bottom, 0px);
-        @include px2rem(width, 136px);
-        @include px2rem(height, 156px);
+        @include px2rem(width, 148px);
+        @include px2rem(height, 170px);
         img {
-          @include px2rem(width, 136px);
-          @include px2rem(height, 156px);
+          @include px2rem(width, 148px);
+          @include px2rem(height, 170px);
         }
       }
       &.bubble_2 {
-        @include px2rem(left, 240px);
-        @include px2rem(top, 12px);
-        @include px2rem(width, 91px);
-        @include px2rem(height, 101px);
+        @include px2rem(left, 237px);
+        @include px2rem(top, 0px);
+        @include px2rem(width, 100px);
+        @include px2rem(height, 111px);
         img {
-          @include px2rem(width, 91px);
-          @include px2rem(height, 101px);
+          @include px2rem(width, 100px);
+          @include px2rem(height, 111px);
         }
       }
       &.bubble_3 {
-        @include px2rem(right, 236px);
-        @include px2rem(bottom, 0px);
-        @include px2rem(width, 102px);
-        @include px2rem(height, 112px);
+        @include px2rem(right, 230px);
+        @include px2rem(bottom, 11px);
+        @include px2rem(width, 114px);
+        @include px2rem(height, 125px);
         img {
-          @include px2rem(width, 102px);
-          @include px2rem(height, 112px);
+          @include px2rem(width, 114px);
+          @include px2rem(height, 125px);
         }
       }
       &.bubble_4 {
-        @include px2rem(right, 114px);
-        @include px2rem(top, 0px);
-        @include px2rem(width, 112px);
-        @include px2rem(height, 132px);
+        @include px2rem(right, 88px);
+        @include px2rem(top, 46px);
+        @include px2rem(width, 124px);
+        @include px2rem(height, 146px);
         img {
-          @include px2rem(width, 112px);
-          @include px2rem(height, 132px);
+          @include px2rem(width, 124px);
+          @include px2rem(height, 146px);
         }
       }
     }

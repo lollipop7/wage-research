@@ -16,22 +16,26 @@
     @include px2rem(line-height, 90px);
   }
   .radar {
-    @include px2rem(margin-top, 325px);
+    @include px2rem(margin-top, 320px);
     .chart {
-      @include px2rem(width, 538px);
-      @include px2rem(height, 403px);
+      position: relative;
+      @include px2rem(top, 20px);
+      @include px2rem(width, 640px);
+      @include px2rem(height, 550px);
     }
   }
-  .lemons {
-    @include px2rem(top, 779px);
-    @include px2rem(width, 91px);
-    @include px2rem(height, 18px);
-  }
+  //.lemons {
+  //  @include px2rem(top, 779px);
+  //  @include px2rem(width, 91px);
+  //  @include px2rem(height, 18px);
+  //}
   .benefit {
-    @include px2rem(top, 826px);
+    @include px2rem(top, 850px);
     @include px2rem(width, 538px);
     @include px2rem(height, 47px);
     background-image: url(../images/box7/4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: block;
   }
   .logo51jrq {

@@ -1,7 +1,8 @@
 /**
  * Created by lollipop on 2017/12/1
  */
-$(document).ready(function(){
+//Created by lollipop at 2017/11/21.
+$('document').ready(function(){
     $('document').ready(function(){
         //播放音乐
         var audio = document.getElementById("audios");
@@ -14,9 +15,8 @@ $(document).ready(function(){
             console.log($(this).val());
             var _obj = this;
             bundle.addClassActive(_obj)
-            // $(this).siblings('.nair-radio-inner').addClass('active');
-            // $(this).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
         });
-
     });
+    //修复在iphone平台上微信上音乐不能自动播放
+    document.getElementById('audios').play();
 });

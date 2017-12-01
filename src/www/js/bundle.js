@@ -1,12 +1,5 @@
 //Created by lollipop at 2017/11/21.
 $('document').ready(function(){
-    //播放音乐
-    // var audio = document.getElementById("audios");
-    // audio.addEventListener("canplaythrough",
-    //     function() {
-    //         audio.play();
-    //     },
-    //     false);
     bundle.init();
     // $('.nair-radio-input').click(function () {
     //     console.log($(this).val());
@@ -36,6 +29,7 @@ var bundle = {
             direction: 'vertical',
             // pagination: '.swiper-pagination',
             hashnav:true,
+            // touchRatio : 0.5,
             // mousewheelControl : true,
             prevButton:'.prev-page',
             nextButton:'.next-page',

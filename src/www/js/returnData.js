@@ -39,6 +39,7 @@ var radarChart = {
                     }
                 }
                 _thisNair.initRadar(_thisNair.countlist);
+
                 $('#num').text(_thisNair.yearincomdescribe+'%');
                 $('#salary').text(_thisNair.yearsalary);
                 $('#bubble_1 span').text(_thisNair.industrydescribe);
@@ -46,6 +47,11 @@ var radarChart = {
                 $('#bubble_3 span').text(_thisNair.worktimedescribe);
                 $('#bubble_4 span').text(_thisNair.functiondescribe);
                 $('#benefit').css({backgroundImage: 'url(./images/box7/'+_thisNair.otherdescribe+'.png)'});
+                if(_thisNair.yearincomdescribe < 40) {
+                    $('#hint').text('（此刻内心受到一万点伤害>_<！）')
+                }else {
+                    $('#hint').text('（您没有拖金融行业薪资后腿哦！）');
+                }
             },
             error:function(XMLHttpRequest, textStatus, errorThrown) {
                 console.log(XMLHttpRequest.status);
@@ -57,30 +63,28 @@ var radarChart = {
     },
     // 绘制图表。
     initRadar:function(dataGR){
-        echarts.init(document.getElementById('main')).setOption({
+        var myChart = echarts.init(document.getElementById('main')).setOption({
             baseOption: {
-                title: {
-                    text: ''
-                },
-                tooltip: {},
-                legend: {
-                    data: []
+                title: { text:null }, // 隐藏图表标题
+                legend: { enabled: false }, // 隐藏图例
+                tooltip : {
+                    trigger: 'axis'
                 },
                 radar: {
                     // shape: 'circle',
                     name: {
                         textStyle: {
-                            fontSize: 20,
                             color: '#5192de',
                         },
                         formatter: (text) => {
-                            text = text.replace(/\S{2}/g, function(match) {
+                            text = text.replace(/\S{3}/g, function(match) {
                                 // console.log(match)
                                 return match + '\n'
                             })
                             return text
                         },
                     },
+                    center:['50%','50%'], // 图的位置
                     indicator: [
                         { name: '月基本薪资', max: 100},
                         { name: '年现金津贴', max: 100},
@@ -143,8 +147,12 @@ function GetQueryString(name){
 }
 
 var answerid = GetQueryString('answerid');
-alert(answerid);
+// alert(answerid);
 radarChart.getNair(answerid);
+
+$(window).resize(function() {//这是能够让图表自适应的代码
+    myChart.resize();
+});
 
 
 
