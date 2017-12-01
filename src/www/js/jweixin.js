@@ -1,38 +1,6 @@
 //Created by lollipop at 2017/11/21.
 //微信JSSDK https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
 
-/*function GetQueryString(name){
-    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-    var r = window.location.search.substr(1).match(reg);
-    if(r!=null)return  unescape(r[2]); return null;
-}
-
-var all = true; //是否填完
-var src = window.location.href;
-var openid = '';
-var nowid = '';
-var num = '';
-
-nowid = 'xxx'; //后台 获取 表示当前用户的openid， 被分享者的openid
-if (GetQueryString('openid') != null) {
-    openid = GetQueryString('openid'); //分享者的openid
-}
-
-var shareObj = {
-    title: '薪酬竞争力分析报告，恭喜你完胜'+num+'的人',
-    link: '',
-    imgUrl: 'http://www.51jrq.com/wx/xcbg/images/header.png'
-};
-
-if (all) { //判断是否填完
-    if (openid == nowid) {
-        shareObj.link = 'http://www.51jrq.com/wx/xcbg/index.html?openid='+openid;
-    } else {
-        shareObj.link = 'http://www.51jrq.com/wx/xcbg/index.html?openid='+nowid;
-    }
-}else { //未填完
-
-}*/
 
 function abc() {
     $.ajax({
@@ -46,6 +14,7 @@ function abc() {
                 'onMenuShareAppMessage',
                 'getNetworkType',
                 'previewImage',
+                'playVoice',
                 'checkJsApi'];
             wx.config(d);
         },
@@ -59,7 +28,8 @@ abc();
 wx.ready(function(){
 
     // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-
+    //修复在iphone平台上微信上音乐不能自动播放
+    document.getElementById('audios').play();
     //判断当前客户端版本是否支持指定JS接口
     wx.checkJsApi({
 
@@ -87,7 +57,6 @@ wx.ready(function(){
         imgUrl: 'http://www.51jrq.com/wx/xcbg/images/header.png', // 分享图标
 
         success: function () {
-
 
         },
 

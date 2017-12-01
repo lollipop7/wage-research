@@ -11,7 +11,7 @@
   .num {
     font-family: 'bebas';
     @include px2rem(top, 213px);
-    @include px2rem(width, 250px);
+    @include px2rem(width, 538px);
     @include px2rem(height, 90px);
     @include px2rem(line-height, 90px);
   }
@@ -53,5 +53,5 @@
 }
 .box6,
 .box7 {
-  display: none;
+  //display: none;
 }

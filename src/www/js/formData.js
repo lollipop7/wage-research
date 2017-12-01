@@ -1,4 +1,6 @@
 //Created by lollipop at 2017/11/21.
+
+var answerid = undefined;
 var submitFormData = function () {
     //1
     var workyears = $('#workyears').val();
@@ -162,7 +164,9 @@ var submitFormData = function () {
                 $('#iknow').click(function () {
                     bundle.closeShareModal();
                     $('.box6, .box7').css({display: 'block'});
-                    radarChart.getNair();
+
+                    // radarChart.getNair(answerid);
+                    window.open('nair.html?answerid='+data.d.answerid,'_self');
                 });
             }
         },

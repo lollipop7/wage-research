@@ -10,12 +10,12 @@ var radarChart = {
     functiondescribe: '',
     otherdescribe: '',
     countlist: [],
-    getNair: function(){
+    getNair: function(answerid){
         var _thisNair = this;
         $.ajax({
             url: 'http://192.168.1.251:8080/vita/salary/result',
             data: {
-                openid: "stranger"
+                answerid: answerid
             },
             success: function(data){
                 console.log(JSON.parse(data));
@@ -38,7 +38,7 @@ var radarChart = {
                         _thisNair.countlist[i] = 100;
                     }
                 }
-                this.initRadar(countlist);
+                _thisNair.initRadar(_thisNair.countlist);
                 $('#num').text(_thisNair.yearincomdescribe+'%');
                 $('#salary').text(_thisNair.yearsalary);
                 $('#bubble_1 span').text(_thisNair.industrydescribe);
@@ -134,7 +134,17 @@ var radarChart = {
 
         });
     }
+};
+
+function GetQueryString(name){
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null)return  unescape(r[2]); return null;
 }
+
+var answerid = GetQueryString('answerid');
+alert(answerid);
+radarChart.getNair(answerid);
 
 
 
