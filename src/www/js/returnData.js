@@ -13,7 +13,7 @@ var radarChart = {
     getNair: function(answerid){
         var _thisNair = this;
         $.ajax({
-            url: 'http://192.168.1.251:8080/vita/salary/result',
+            url: '/vita/m/salary/result',
             data: {
                 answerid: answerid
             },

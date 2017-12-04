@@ -122,7 +122,7 @@ var submitFormData = function () {
     var jobchange = 0;
     var hopindustry = 0;
     var hopgains = 0;*/
-        console.log(`
+    console.log(`
         问题1 workyears:${workyears},
         问题2 workyearinfinance:${workyearinfinance},
         问题3 industry:${industry},
@@ -166,20 +166,20 @@ var submitFormData = function () {
         hopgains: (parseFloat(hopgains)/100).toFixed(2)
     };
     $.ajax({
-        url: 'http://192.168.1.251:8080/vita/salary/count',
-        type: 'post',
-        contentType: 'application/x-www-form-urlencoded',    // 可省略
-        processData: true,        // 可省略
-        dataType:'json',
-        async:false,
+        url: '/vita/m/salary/count',
+        type: 'POST',
+        // contentType: 'application/x-www-form-urlencoded',    // 可省略
+        // processData: true,        // 可省略
+        // dataType:'json',
+        // async:false,
         data: formData,
         success: function (data) {
-            if(data.result) {
+            if(JSON.parse(data).result) {
                 bundle.openShareModal();
                 $('#iknow').click(function () {
                     bundle.closeShareModal();
                     // radarChart.getNair(answerid);
-                    window.location.href = 'nair.html?answerid='+data.d.answerid;
+                    window.location.href = 'nair.html?answerid='+JSON.parse(data).d.answerid;
                 });
             }
         },

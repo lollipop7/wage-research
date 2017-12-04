@@ -1,18 +1,14 @@
 //Created by lollipop at 2017/11/21.
 $('document').ready(function(){
     bundle.init();
-    $('.nair-radio-input').click(function () {
-        console.log($(this).val());
-        var _obj = this;
-        bundle.addClassActive(_obj)
-        // $(this).siblings('.nair-radio-inner').addClass('active');
-        // $(this).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
-    });
+    // $('.nair-radio-input').click(function () {
+    //     console.log($(this).val());
+    //     var _obj = this;
+    //     bundle.addClassActive(_obj)
+    //     // $(this).siblings('.nair-radio-inner').addClass('active');
+    //     // $(this).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
+    // });
 
-    $('#iknow').click(function () {
-        $('.share_modal').css({opacity: 0});
-        bundle.closeShareModal();
-    });
 });
 var bundle = {
     init: function() {
@@ -33,10 +29,13 @@ var bundle = {
             direction: 'vertical',
             // pagination: '.swiper-pagination',
             hashnav:true,
+            // touchRatio : 0.5,
             // mousewheelControl : true,
             prevButton:'.prev-page',
             nextButton:'.next-page',
             autoHeight: true, //高度随内容变化
+            observer: true,//修改swiper自己或子元素时，自动初始化swiper
+            observeParents: true,//修改swiper的父元素时，自动初始化swiper
             onInit: function(swiper){//初始化之后执行
                 swiperAnimateCache(swiper);//隐藏动画元素
                 swiperAnimate(swiper);//初始化完成开始动画
@@ -77,11 +76,11 @@ var bundle = {
                 for (var i = 0; i < swiper.slides.length; i++) {
                     es = swiper.slides[i].style;
                     es.webkitTransitionDuration =
-                        es.MsTransitionDuration =
-                            es.msTransitionDuration =
-                                es.MozTransitionDuration =
-                                    es.OTransitionDuration =
-                                        es.transitionDuration = speed + 'ms';
+                    es.MsTransitionDuration =
+                    es.msTransitionDuration =
+                    es.MozTransitionDuration =
+                    es.OTransitionDuration =
+                    es.transitionDuration = speed + 'ms';
                 }
             }
         });
@@ -163,7 +162,7 @@ var bundle = {
     },
     //显示蒙层
     openShareModal: function(){
-        $('.share_modal').css({opcity: 1});
+        $('.share_modal').css({opacity: 1});
         var _this = $('.share-modal-wrap');
         setTimeout(function () {
             $(_this).find('.curve').addClass('animated fadeInUp');
@@ -186,7 +185,7 @@ var bundle = {
     },
     //关闭蒙层
     closeShareModal: function(){
-        $('.share_modal').css({opcity: 0});
+        $('.share_modal').css({opacity: 0});
     },
     openDialog:function(text){
         $('.dialog-container').css({
