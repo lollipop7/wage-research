@@ -42,10 +42,10 @@
   display: block;
   position: absolute;
   top: 0;
-  right: 0;
+  @include px2rem(right,32px);
   background-image: url(../images/forms/header.png);
-  @include px2rem(width,560px);
-  @include px2rem(height,267px);
+  @include px2rem(width,591px);
+  @include px2rem(height,264px);
   background-size: 100% 100%;
 }
 

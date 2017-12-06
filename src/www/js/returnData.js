@@ -1,7 +1,8 @@
 /**
  * Created by lollipop on 2017/11/27
  */
-
+var PR ="http://"+window.location.host+"/";
+var url = PR + "vita/m/salary/result";
 var radarChart = {
     yearsalary: '',
     industrydescribe: '',
@@ -11,46 +12,48 @@ var radarChart = {
     otherdescribe: '',
     countlist: [],
     getNair: function(answerid){
+        console.log(answerid);
         var _thisNair = this;
         $.ajax({
-            url: '/vita/m/salary/result',
+            url: url,
             data: {
                 answerid: answerid
             },
             success: function(data){
                 console.log(JSON.parse(data));
-                // return  JSON.parse(data);
-                _thisNair.yearsalary = JSON.parse(data).d.yearsalary;
+                if(JSON.parse(data).result){
+                    _thisNair.yearsalary = JSON.parse(data).d.yearsalary;
 
-                //气泡
-                _thisNair.industrydescribe = JSON.parse(data).d.industrydescribe; //"高大上传统金融行业"
-                _thisNair.yearincomdescribe = parseInt(JSON.parse(data).d.yearincomdescribe); //百分比
-                _thisNair.worktimedescribe = JSON.parse(data).d.worktimedescribe; //"老腊肉"
-                _thisNair.functiondescribe = JSON.parse(data).d.functiondescribe; //"企业发动机"
+                    //气泡
+                    _thisNair.industrydescribe = JSON.parse(data).d.industrydescribe; //"高大上传统金融行业"
+                    _thisNair.yearincomdescribe = parseInt(JSON.parse(data).d.yearincomdescribe); //百分比
+                    _thisNair.worktimedescribe = JSON.parse(data).d.worktimedescribe; //"老腊肉"
+                    _thisNair.functiondescribe = JSON.parse(data).d.functiondescribe; //"企业发动机"
 
-                //lemons下面的话
-                _thisNair.otherdescribe = JSON.parse(data).d.otherdescribe; //4
+                    //lemons下面的话
+                    _thisNair.otherdescribe = JSON.parse(data).d.otherdescribe; //4
 
-                //展示radarChart
-                _thisNair.countlist= JSON.parse(data).d.countlist; //雷达图数据值
-                for ( var i = 0; i < _thisNair.countlist.length; i++) {
-                    if(_thisNair.countlist[i] > 100) {
-                        _thisNair.countlist[i] = 100;
+                    //展示radarChart
+                    _thisNair.countlist= JSON.parse(data).d.countlist; //雷达图数据值
+                    for ( var i = 0; i < _thisNair.countlist.length; i++) {
+                        if(_thisNair.countlist[i] > 100) {
+                            _thisNair.countlist[i] = 100;
+                        }
                     }
-                }
-                _thisNair.initRadar(_thisNair.countlist);
+                    _thisNair.initRadar(_thisNair.countlist);
 
-                $('#num').text(_thisNair.yearincomdescribe+'%');
-                $('#salary').text(_thisNair.yearsalary);
-                $('#bubble_1 span').text(_thisNair.industrydescribe);
-                $('#bubble_2 span').text('完胜'+_thisNair.yearincomdescribe+'%');
-                $('#bubble_3 span').text(_thisNair.worktimedescribe);
-                $('#bubble_4 span').text(_thisNair.functiondescribe);
-                $('#benefit').css({backgroundImage: 'url(./images/box7/'+_thisNair.otherdescribe+'.png)'});
-                if(_thisNair.yearincomdescribe < 40) {
-                    $('#hint').text('（此刻内心受到一万点伤害>_<！）')
-                }else {
-                    $('#hint').text('（您没有拖金融行业薪资后腿哦！）');
+                    $('#num').text(_thisNair.yearincomdescribe+'%');
+                    $('#salary').text(_thisNair.yearsalary);
+                    $('#bubble_1 span').text(_thisNair.industrydescribe);
+                    $('#bubble_2 span').text('完胜'+_thisNair.yearincomdescribe+'%');
+                    $('#bubble_3 span').text(_thisNair.worktimedescribe);
+                    $('#bubble_4 span').text(_thisNair.functiondescribe);
+                    $('#benefit').css({backgroundImage: 'url(./images/box7/'+_thisNair.otherdescribe+'.png)'});
+                    if(_thisNair.yearincomdescribe < 40) {
+                        $('#hint').text('（此刻内心受到一万点伤害>_<！）')
+                    }else {
+                        $('#hint').text('（您没有拖金融行业薪资后腿哦！）');
+                    }
                 }
             },
             error:function(XMLHttpRequest, textStatus, errorThrown) {
@@ -140,19 +143,35 @@ var radarChart = {
     }
 };
 
+
+
 function GetQueryString(name){
     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
-    if(r!=null)return  unescape(r[2]); return null;
+    if(r!=null)return  unescape(r[2]); return '';
 }
 
-var answerid = GetQueryString('answerid');
-// alert(answerid);
-radarChart.getNair(answerid);
+var answerid = GetQueryString('answerid') || localStorage.getItem('answerid');
+// alert(localStorage.getItem('answerid'));
+console.log(GetQueryString('answerid'),localStorage.getItem('answerid'));
 
-$(window).resize(function() {//这是能够让图表自适应的代码
-    myChart.resize();
-});
+setTimeout(function(){radarChart.getNair(answerid);},1000);
+
+
+
+//
+// $(window).resize(function() {//这是能够让图表自适应的代码
+//     myChart.resize();
+// });
+
+
+// window.addEventListener('message', function(e){
+//     // debugger
+//     // if(e.origin != PR) return;
+//     var answerid = e.data;
+//     // console.log(e.data, answerid);
+//     radarChart.getNair(answerid[0]);
+// },false)
 
 
 

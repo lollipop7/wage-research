@@ -17,6 +17,5 @@ $('document').ready(function(){
             bundle.addClassActive(_obj)
         });
     });
-    //修复在iphone平台上微信上音乐不能自动播放
-    document.getElementById('audios').play();
+
 });

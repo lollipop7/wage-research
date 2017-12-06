@@ -165,21 +165,33 @@ var submitFormData = function () {
         hopindustry: hopindustry,
         hopgains: (parseFloat(hopgains)/100).toFixed(2)
     };
+
+    var PR ="http://"+window.location.host+"/";
+    var url = PR + "vita/m/salary/count";
     $.ajax({
-        url: '/vita/m/salary/count',
+        url: url,
         type: 'POST',
-        // contentType: 'application/x-www-form-urlencoded',    // 可省略
-        // processData: true,        // 可省略
-        // dataType:'json',
-        // async:false,
         data: formData,
         success: function (data) {
             if(JSON.parse(data).result) {
                 bundle.openShareModal();
                 $('#iknow').click(function () {
                     bundle.closeShareModal();
-                    // radarChart.getNair(answerid);
                     window.location.href = 'nair.html?answerid='+JSON.parse(data).d.answerid;
+                    localStorage.setItem('answerid', JSON.parse(data).d.answerid);
+
+                    // var params = new Array();
+                    // params[0] = new Array(JSON.parse(data).d.answerid);
+                    // var popwin = window.open(PR +'wx/xcbg/nair.html', '_blank');
+                    // popwin.onload = function(e){
+                    //     popwin.postMessage(params, PR);
+                    // }
+                    // window.addEventListener('message', function(e){
+                    //     console.log(e);
+                    // })
+                    // popwin.onunload = function(e){
+                    //     alert(e.returnValue);
+                    // }
                 });
             }
         },
