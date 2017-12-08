@@ -1,7 +1,7 @@
 //Created by lollipop at 2017/11/21.
 //微信JSSDK https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
 
-function abc() {
+var abc = function() {
     $.ajax({
         url: 'http://www.51jrq.com/weixin/token',
         data: {
@@ -24,12 +24,43 @@ function abc() {
     });
 };
 abc();
+var shareid = '';
+var count = function(formData){
+    var PR ="http://"+window.location.host+"/";
+    var url = PR + "vita/m/salary/count";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: formData,
+        success: function (data) {
+            data = JSON.parse(data);
+            if(data.result) {
+                bundle.openShareModal();
+                $('#iknow').click(function () {
+                    bundle.closeShareModal();
+                    window.location.href = 'nair.html?answerid='+data.d.answerid;
+                    localStorage.setItem('answerid', data.d.answerid);
+                    shareid = data.d.answerid || localStorage.getItem('answerid');
+                });
+            }
+        },
+        error:function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest.status);
+            console.log(XMLHttpRequest.readyState);
+            console.log(textStatus);
+        }
+    })
+};
+
 
 wx.ready(function(){
 
     // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
     //修复在iphone平台上微信上音乐不能自动播放
-        document.getElementById('audios').play();
+    var music = document.getElementById('audios');
+    if( music != undefined){
+        music.play();
+    };
 
     //判断当前客户端版本是否支持指定JS接口
     wx.checkJsApi({
@@ -53,7 +84,7 @@ wx.ready(function(){
 
         title: '别人眼中金融高薪的你，收入水平达标了吗？一分钟给你薪酬竞争力分析报告', // 分享标题
 
-        link: 'http://www.51jrq.com/wx/xcbg/index.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: 'http://www.51jrq.com/wx/xcbg/share.html?shareid='+shareid, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
 
         imgUrl: 'http://www.51jrq.com/wx/xcbg/images/header.png', // 分享图标
 
@@ -75,7 +106,7 @@ wx.ready(function(){
 
         desc: '51金融圈将以严谨的职业态度对您提交的数据资料严格保密。此问卷仅在本次调研活动中做分析依据使用，请放心作答。', // 分享描述
 
-        link: 'http://www.51jrq.com/wx/xcbg/index.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: 'http://www.51jrq.com/wx/xcbg/share.html?shareid='+shareid, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
 
         imgUrl: 'http://www.51jrq.com/wx/xcbg/images/header.png', // 分享图标
 

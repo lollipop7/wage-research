@@ -1,7 +1,7 @@
 //Created by lollipop at 2017/11/21.
 
 var submitFormData = function () {
-    //1
+    /*//1
     var workyears = $('#workyears').val();
     if("" == workyears){
         bundle.openDialog('1.总工作年限不能为空');
@@ -104,8 +104,8 @@ var submitFormData = function () {
     }else {
         hopindustry = '无';
         hopgains = 0;
-    }
-    /*var workyears = 2;
+    }*/
+    var workyears = 2;
     var workyearinfinance = 2;
     var industry = '银行';
     var companynature = '外商独资';
@@ -121,7 +121,7 @@ var submitFormData = function () {
     var wefare = 0;
     var jobchange = 0;
     var hopindustry = 0;
-    var hopgains = 0;*/
+    var hopgains = 0;
     console.log(`
         问题1 workyears:${workyears},
         问题2 workyearinfinance:${workyearinfinance},
@@ -166,39 +166,28 @@ var submitFormData = function () {
         hopgains: (parseFloat(hopgains)/100).toFixed(2)
     };
 
-    var PR ="http://"+window.location.host+"/";
-    var url = PR + "vita/m/salary/count";
-    $.ajax({
-        url: url,
-        type: 'POST',
-        data: formData,
-        success: function (data) {
-            if(JSON.parse(data).result) {
-                bundle.openShareModal();
-                $('#iknow').click(function () {
-                    bundle.closeShareModal();
-                    window.location.href = 'nair.html?answerid='+JSON.parse(data).d.answerid;
-                    localStorage.setItem('answerid', JSON.parse(data).d.answerid);
+    // var PR ="http://"+window.location.host+"/";
+    // var url = PR + "vita/m/salary/count";
+    // $.ajax({
+    //     url: url,
+    //     type: 'POST',
+    //     data: formData,
+    //     success: function (data) {
+    //         if(JSON.parse(data).result) {
+    //             bundle.openShareModal();
+    //             $('#iknow').click(function () {
+    //                 bundle.closeShareModal();
+    //                 window.location.href = 'nair.html?answerid='+JSON.parse(data).d.answerid;
+    //                 localStorage.setItem('answerid', JSON.parse(data).d.answerid);
+    //             });
+    //         }
+    //     },
+    //     error:function(XMLHttpRequest, textStatus, errorThrown) {
+    //         console.log(XMLHttpRequest.status);
+    //         console.log(XMLHttpRequest.readyState);
+    //         console.log(textStatus);
+    //     }
+    // })
 
-                    // var params = new Array();
-                    // params[0] = new Array(JSON.parse(data).d.answerid);
-                    // var popwin = window.open(PR +'wx/xcbg/nair.html', '_blank');
-                    // popwin.onload = function(e){
-                    //     popwin.postMessage(params, PR);
-                    // }
-                    // window.addEventListener('message', function(e){
-                    //     console.log(e);
-                    // })
-                    // popwin.onunload = function(e){
-                    //     alert(e.returnValue);
-                    // }
-                });
-            }
-        },
-        error:function(XMLHttpRequest, textStatus, errorThrown) {
-            console.log(XMLHttpRequest.status);
-            console.log(XMLHttpRequest.readyState);
-            console.log(textStatus);
-        }
-    })
+    count(formData);
 }

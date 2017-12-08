@@ -24,6 +24,7 @@
     "swiper": "3.4.1",
     "waypoints": "^4.0.1",
     "echarts": "^3.8.5",
-    "jquery-form": "^4.2.2"
+    "jquery-form": "^4.2.2",
+    "chart.js": "^2.7.1"
   }
 }

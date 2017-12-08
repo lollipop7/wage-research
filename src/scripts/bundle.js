@@ -227,8 +227,6 @@ var bundle = {
     setChecked: function (obj) {
         $(obj).siblings('.nair-radio-input').attr("checked",true);
         this.addClassActive(obj);
-        // $(obj).siblings('.nair-radio-inner').addClass('active');
-        // $(obj).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
     },
     addClassActive: function (obj){
         $(obj).siblings('.nair-radio-inner').addClass('active');

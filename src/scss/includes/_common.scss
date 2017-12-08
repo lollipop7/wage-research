@@ -42,7 +42,6 @@
   display: block;
   position: absolute;
   top: 0;
-  @include px2rem(right,32px);
   background-image: url(../images/forms/header.png);
   @include px2rem(width,591px);
   @include px2rem(height,264px);

@@ -14,7 +14,7 @@
 
   .page-num {
     @include px2rem(top, 264px);
-    @include px2rem(right, 48px);
+    @include px2rem(left, 306px);
     @include px2rem(width, 287px);
     @include px2rem(height, 26px);
   }
@@ -53,7 +53,7 @@
         @include px2rem(height, 39px);
       }
       &.question8 {
-        @include px2rem(width, 542px);
+        @include px2rem(width, 544px);
         @include px2rem(height, 76px);
       }
       &.question9 {
@@ -165,6 +165,16 @@
             opacity: 1;
             transform:scale(1);
             transition: transform .3s cubic-bezier(.78,.14,.15,.86);
+          }
+          &.disabled:after {
+            content: '×';
+            color: #814141;
+            background-color: transparent;
+            transform: scale(1);
+            opacity: 1;
+            line-height: 100%;
+            text-align: center;
+            width: 100%;
           }
         }
       }
