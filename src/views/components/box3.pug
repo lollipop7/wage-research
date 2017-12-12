@@ -1,27 +1,39 @@
-//created by lollipop 2017/11/21
+//created by lollipop 2017/12/12
 .swiper-slide.box3(data-hash="slide3")
     include ../includes/header
-    img.page-num.ani(src="images/forms/3-5.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
+    img.page-num.ani(src="images/forms/3-3.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
     ul.commited
         //问题8
-        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".39s")
             .label-text
                 img(src="images/forms/question8.png", class="question8")
-                input(type="number", id="monthsalary", name="monthsalary")
+                input(type="number", id="allowance", name="allowance")
         //问题9
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
             img(src="images/forms/question9.png", class="question9")
-            .choice#ques9
-                - var ninethList = {1:'12个月',2:'13个月',3:'14个月',4:'15个月',5:'其它'}
-                each item, index in ninethList
+            .choice
+                - var tewlevethList = {1:5,2:8,3:10,4:13,5:15,6:20}
+                each item, index in tewlevethList
                     label.label-container
                         img(src=`images/forms/question9/${index}.png`)
-                        if index == 5
-                            input.nair-radio-input(type="radio",name="months", value=`${item}`)
-                            input.nair-text-input(type="number",name="monthsOth",onclick="bundle.setChecked(this)",oninput="if(value.length>2)value=value.slice(0,2)")
-                        else
-                            input.nair-radio-input(type="radio",name="months", value=`${item}`)
+                        input.nair-radio-input(type="radio" name="gains", value=`${item}`)
                         span.nair-radio-inner
-    include ../includes/page-wrapper
-    img.logo51jrq.justify-center.ani(src="images/forms/logo51jrq.png",swiper-animate-effect="slideInup",swiper-animate-duration=".5s",swiper-animate-delay="1.09s")
-    .arrow-down.justify-center
+
+        //问题10
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".69s")
+            .label-text
+                img(src="images/forms/question10.png", class="question10")
+                input(type="number", id="wefare", name="wefare")
+
+        //问题11
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".89s")
+            img(src="images/forms/question11.png", class="question11")
+            .choice
+                - var seventeenthList = {1:'15',2:'20',3:'25',4:'30',5:'35',6:'40'}
+                each item, index in seventeenthList
+                    label.label-container
+                        img(src=`images/forms/question11/${index}.png`)
+                        input.nair-radio-input(type="radio" name="hopgains", value=`${item}`)
+                        span.nair-radio-inner
+    img.submit#submit(src="images/forms/submit.png",onclick="submitFormData()",swiper-animate-effect="slideInup",swiper-animate-duration=".5s",swiper-animate-delay=".99s")
+    img.logo51jrq.ani(src="images/forms/logo51jrq.png",swiper-animate-effect="slideInup",swiper-animate-duration=".5s",swiper-animate-delay="1.09s")

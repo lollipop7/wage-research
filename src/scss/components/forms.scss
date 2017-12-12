@@ -1,9 +1,7 @@
 //Created by lollipop 2017/11/22
 .box1,
 .box2,
-.box3,
-.box4,
-.box5 {
+.box3{
   //logo png
   .logo {
     @include px2rem(bottom, 111px);
@@ -15,8 +13,8 @@
   .page-num {
     @include px2rem(top, 264px);
     @include px2rem(left, 306px);
-    @include px2rem(width, 287px);
-    @include px2rem(height, 26px);
+    @include px2rem(width, 285px);
+    @include px2rem(height, 27px);
   }
 
   .commited {
@@ -25,70 +23,46 @@
     img {
       position: static;
       &.question1 {
-        @include px2rem(width, 542px);
-        @include px2rem(height, 116px);
-      }
-      &.question2 {
         @include px2rem(width, 543px);
         @include px2rem(height, 76px);
       }
-      &.question3 {
+      &.question2 {
         @include px2rem(width, 239px);
         @include px2rem(height, 39px);
       }
-      &.question4 {
-        @include px2rem(width, 364px);
-        @include px2rem(height, 39px);
-      }
-      &.question5 {
-        @include px2rem(width, 542px);
-        @include px2rem(height, 76px);
-      }
-      &.question6 {
+      &.question3 {
         @include px2rem(width, 450px);
         @include px2rem(height, 39px);
       }
-      &.question7 {
+      &.question4 {
         @include px2rem(width, 306px);
         @include px2rem(height, 39px);
       }
-      &.question8 {
+      &.question5 {
         @include px2rem(width, 544px);
         @include px2rem(height, 76px);
       }
-      &.question9 {
+      &.question6 {
         @include px2rem(width, 541px);
         @include px2rem(height, 71px);
       }
-      &.question10 {
+      &.question7 {
         @include px2rem(width, 524px);
         @include px2rem(height, 71px);
       }
-      &.question11 {
+      &.question8 {
         @include px2rem(width, 521px);
         @include px2rem(height, 150px);
       }
-      &.question12 {
+      &.question9 {
         @include px2rem(width, 419px);
         @include px2rem(height, 39px);
       }
-      &.question13 {
-        @include px2rem(width, 497px);
-        @include px2rem(height, 39px);
-      }
-      &.question14 {
+      &.question10 {
         @include px2rem(width, 534px);
         @include px2rem(height, 150px);
       }
-      &.question15 {
-        @include px2rem(width, 413px);
-        @include px2rem(height, 39px);
-      }
-      &.question16 {
-        @include px2rem(width, 469px);
-        @include px2rem(height, 39px);
-      }
-      &.question17 {
+      &.question11 {
         @include px2rem(width, 495px);
         @include px2rem(height, 39px);
       }
@@ -218,9 +192,13 @@
 }
 .box1,
 .box2,
-.box3,
-.box4,
+.box3
 .box7 {
+  .label-text {
+    input {
+      @include px2rem(padding-left, 20px);
+    }
+  }
   .arrow-down {
     position: static;
     @include px2rem(margin-top, 27px);
@@ -232,11 +210,4 @@
     }
   }
 }
-.box4,
-.box5 {
-  .label-text {
-    input {
-      @include px2rem(padding-left, 20px);
-    }
-  }
-}
+

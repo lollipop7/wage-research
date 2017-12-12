@@ -79,7 +79,7 @@ gulp.task('compile:scss:watch', () => {
  * 图片base64
  */
 gulp.task('base64', () => {
-    return gulp.src(join(wwwDir, 'styles', 'index.css'))
+    return gulp.src(join(wwwDir, 'styles', '*.css'))
         .pipe($.base64({
             extensions: ['svg', 'png', '\.jpg#datauri$/i'],
             maxImageSize: 15*1024,

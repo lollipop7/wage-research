@@ -1,32 +1,50 @@
 //created by lollipop 2017/11/21
 .swiper-slide.preload.box2(data-hash="slide2")
     include ../includes/header
-    img.page-num.ani(src="images/forms/2-5.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
+    img.page-num.ani(src="images/forms/2-3.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
     ul.commited
-        //问题5
-        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
-            .label-text
-                img(src="images/forms/question5.png", class="question5")
-                input(type="text", id="company", name="company")
-        //问题6
-        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
-            img(src="images/forms/question6.png", class="question6")
-            .choice#que6
-                - var sixthList = {1:'高管', 2:'支持职能',3:'市场/销售',4:'产品开发/管理',5:'技术/研发',6:'风险控制',7:'资金管理',8:'授信管理',9:'贷后管理',10:'理赔/核保',11:'客服'}
-                each item, index in sixthList
-                    label.label-container
-                        img(src=`images/forms/question6/${index}.png`)
-                        input.nair-radio-input(type="radio" name="functions", value=`${item}`)
-                        span.nair-radio-inner
-        //问题7
+        //问题4
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".59s")
-            img(src="images/forms/question7.png", class="question7")
+            img(src="images/forms/question4.png", class="question4")
             .choice#que7
                 - var seventhList = {1:'高层管理',2:'总监/专家工程师',3:'经理/资深工程师',4:'主管/高级工程师',5:'专员/技术人员',6:'助理'}
                 each item, index in seventhList
                     label.label-container
-                        img(src=`images/forms/question7/${index}.png`)
+                        img(src=`images/forms/question4/${index}.png`)
                         input.nair-radio-input(type="radio" name="positions", value=`${item}`)
+                        span.nair-radio-inner
+        //问题5
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
+            .label-text
+                img(src="images/forms/question5.png", class="question5")
+                input(type="number", id="monthsalary", name="monthsalary")
+        //问题6
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
+            img(src="images/forms/question6.png", class="question6")
+            .choice#ques9
+                - var ninethList = {1:'12个月',2:'13个月',3:'14个月',4:'15个月',5:'其它'}
+                each item, index in ninethList
+                    label.label-container
+                        img(src=`images/forms/question6/${index}.png`)
+                        if index == 5
+                            input.nair-radio-input(type="radio",name="months", value=`${item}`)
+                            input.nair-text-input(type="number",name="monthsOth",onclick="bundle.setChecked(this)",oninput="if(value.length>2)value=value.slice(0,2)")
+                        else
+                            input.nair-radio-input(type="radio",name="months", value=`${item}`)
+                        span.nair-radio-inner
+        //问题7
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
+            img(src="images/forms/question7.png", class="question7")
+            .choice#ques10
+                - var tenththList = {1:'1个月',2:'2个月',3:'3个月',4:'4个月',5:'5个月',6:'其它'}
+                each item, index in tenththList
+                    label.label-container
+                        img(src=`images/forms/question7/${index}.png`)
+                        if index == 6
+                            input.nair-radio-input(type="radio" name="othermonths", value=`${item}`)
+                            input.nair-text-input(type="number" name="othermonths",onclick="bundle.setChecked(this)",oninput="if(value.length>2)value=value.slice(0,2)")
+                        else
+                            input.nair-radio-input(type="radio" name="othermonths", value=`${item}`)
                         span.nair-radio-inner
     include ../includes/page-wrapper
     img.logo51jrq.ani(src="images/forms/logo51jrq.png",swiper-animate-effect="slideInup",swiper-animate-duration=".5s",swiper-animate-delay="1.09s")

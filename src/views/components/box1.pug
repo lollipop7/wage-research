@@ -1,38 +1,33 @@
 //created by lollipop 2017/11/21
 .swiper-slide.preload.box1(data-hash="slide1")
     include ../includes/header
-    img.page-num.ani(src="images/forms/1-5.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
+    img.page-num.ani(src="images/forms/1-3.png",swiper-animate-effect="slideInRight",swiper-animate-duration=".5s",swiper-animate-delay=".19s")
     ul.commited
         //问题1
-        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".29s")
-            .label-text
-                img(src="images/forms/question1.png", class="question1")
-                input(type="number", id="workyears", name="workyears", oninput="if(value.length>2)value=value.slice(0,2)")
-        //问题2
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".39s")
             .label-text
-                img(src="images/forms/question2.png", class="question2")
+                img(src="images/forms/question1.png", class="question1")
                 input(type="number", id="workyearinfinance", name="workyearinfinance",oninput="if(value.length>2)value=value.slice(0,2)")
-        //问题3
+        //问题2
         li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
-            img(src="images/forms/question3.png", class="question3")
+            img(src="images/forms/question2.png", class="question2")
             .choice#ques3
                 - var thirdList = {1:'银行',2:'证券',3:'基金/互联网基金',4:'保险/互联网保险',5:'期货',6:'信托/互联网信托',7:'互联网金融',8:'互联网支付',9:'网络借贷',10:'大数据征信',11:'互联网金融资讯'}
                     each item, index in thirdList
                         label.label-container
-                            img(src=`images/forms/question3/${index}.png`)
+                            img(src=`images/forms/question2/${index}.png`)
                             input.nair-radio-input(type="radio" name="industry", value=`${item}`)
                             span.nair-radio-inner
-        //问题4
-        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".59s")
-            img(src="images/forms/question4.png", class="question4")
-            .choice
-                - var fourthList = {1:'外商独资',2: '中外合资',3:'央企/国企',4:'民营'}
-                    each item, index in fourthList
-                        label.label-container
-                            img(src=`images/forms/question4/${index}.png`)
-                            input.nair-radio-input(type="radio" name="companynature", value=`${item}`)
-                            span.nair-radio-inner
+        //问题3
+        li.inner.ani(swiper-animate-effect="zoomIn",swiper-animate-duration=".5s",swiper-animate-delay=".49s")
+            img(src="images/forms/question3.png", class="question3")
+            .choice#que6
+                - var sixthList = {1:'高管', 2:'支持职能',3:'市场/销售',4:'产品开发/管理',5:'技术/研发',6:'风险控制',7:'资金管理',8:'授信管理',9:'贷后管理',10:'理赔/核保',11:'客服'}
+                each item, index in sixthList
+                    label.label-container
+                        img(src=`images/forms/question3/${index}.png`)
+                        input.nair-radio-input(type="radio" name="functions", value=`${item}`)
+                        span.nair-radio-inner
     include ../includes/page-wrapper
     img.logo51jrq.ani(src="images/forms/logo51jrq.png",swiper-animate-effect="slideInup",swiper-animate-duration=".5s",swiper-animate-delay="1.09s")
     .arrow-down
