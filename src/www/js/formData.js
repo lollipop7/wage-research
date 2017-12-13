@@ -95,11 +95,6 @@ var submitFormData = function () {
         问题10 wefare:${parseInt(wefare)},
         问题11 hopgains:${(parseFloat(hopgains)/100).toFixed(2)},
     `)
-
-    /*console.log(`
-        问题9:${months},
-        问题10:${othermonths},
-    `)*/
     var formData = {
         workyearinfinance: workyearinfinance,
         industry: industry,

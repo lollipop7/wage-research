@@ -37,6 +37,6 @@ li,p {
   margin: 0 auto;
 }
 
-  html,body,.wrapper {
-    @include px2rem(max-width,640px);
-  }
+  //html,body,.wrapper {
+  //  @include px2rem(max-width,640px);
+  //}

@@ -10,11 +10,9 @@
   &.box0 {
     background-image: url(../images/initial/bg.jpg);
   }
-  &.box6 {
-    background-image: url(../images/box6/bg.jpg);
-  }
-  &.box7 {
-    background-image: url(../images/box7/bg.jpg);
+  &.box4,
+  &.box5 {
+    background-image: url(../images/box4/bg.jpg);
   }
   background-size: 100% 100%;
 }

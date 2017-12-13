@@ -1,15 +1,13 @@
 //Created by lollipop at 2017/11/22.
 doctype html
 html(lang='en')
-    include includes/head
+    include includes/head-nair
     body
-     .nair-wrapper
-         .swiper-container
-             .swiper-wrapper
-                 include components/box6
-                 include components/box7
-             .swiper-pagination
-    audio(id="audios",src="audio/bg.mp3",loop="loop",autoplay="autoplay")
+     .swiper-container
+         .swiper-wrapper
+             include components/box4
+             include components/box5
+    //audio(id="audios",src="audio/bg.mp3",loop="loop",autoplay="autoplay")
     //- zepto
     script(src="js/zepto.min.js")
     //- swiper
@@ -23,7 +21,7 @@ html(lang='en')
     script(src="js/returnChart.js")
     //- 表单
     //- 引用微信js-sdk文件
-    script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js") 
+    script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
     script(src="js/jweixin.js")
 
 

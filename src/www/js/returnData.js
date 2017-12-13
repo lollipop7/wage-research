@@ -60,6 +60,6 @@ var answerid = GetQueryString('answerid') || localStorage.getItem('answerid');
 
 console.log(GetQueryString('answerid'),localStorage.getItem('answerid'));
 
-setTimeout(function(){getNair(answerid);},1000);
+setTimeout(function(){getNair(answerid);});
 
 

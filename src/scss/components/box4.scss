@@ -1,0 +1,81 @@
+//Created by lollipop 2017/12/13
+
+.box4 {
+  @font-face {
+    font-family: 'bebas';
+    src: url(../images/bebas.ttf);
+  }
+  @font-face {
+    font-family: 'fzktjt';
+    src: url(../images/fzktjt.ttf);
+  }
+  //下拉箭头
+  .next-arrow {
+    display: block;
+    @include px2rem(width, 53px);
+    @include px2rem(height, 57px);
+    background-image: url(../images/box4/next-arrow.png);
+    position: absolute;
+    @include px2rem(bottom, 66px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: webSwipeTipAfter 1.5s infinite ease-in-out;
+    background-size: 100% 100%;
+  }
+  .test-result {
+    @include px2rem(top, 60px);
+    @include px2rem(width, 351px);
+    @include px2rem(height, 194px);
+  }
+  .calcu {
+    @include px2rem(top, 294px);
+    @include px2rem(width, 222px);
+    @include px2rem(height, 66px);
+  }
+  .salary {
+    @include px2rem(margin-top, 380px);
+    text-align: center;
+  }
+  .num {
+    font-family: 'bebas';
+    display: inline-block;
+    @include font-dpr(30px);
+    color: #f4b743;
+    text-align: center;
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(116, 239, 249, 1)), to(rgba(101, 155, 196, 1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include px2rem(line-height, 60px);
+  }
+  .yuan {
+    display: inline-block;
+    background-image: url(../images/box4/yuan.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include px2rem(width, 27px);
+    @include px2rem(height, 27px);
+  }
+  .radar {
+    @include px2rem(margin-top, 30px);
+    @include px2rem(height, 450px);
+    text-align: center;
+    .chart {
+      display: inline-block;
+      background-image: url(../images/box4/radar.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      @include px2rem(width, 440px);
+      @include px2rem(height, 400px);
+    }
+  }
+  .benefit {
+    @include px2rem(top, 934px);
+    @include px2rem(width, 538px);
+    @include px2rem(height, 48px);
+    background-image: url(../images/box4/4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+  }
+}

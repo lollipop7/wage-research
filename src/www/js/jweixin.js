@@ -25,9 +25,9 @@ var abc = function() {
 };
 abc();
 var shareid = '';
+var PR ="http://"+window.location.host+"/";
+var url = PR + "vita/m/salary/count";
 var count = function(formData){
-    var PR ="http://"+window.location.host+"/";
-    var url = PR + "vita/m/salary/count";
     $.ajax({
         url: url,
         type: 'POST',
@@ -50,6 +50,26 @@ var count = function(formData){
             console.log(textStatus);
         }
     })
+};
+var percent = '';
+var getNair = function (answerid){
+    $.ajax({
+        url: url,
+        data: {
+            answerid: answerid
+        },
+        success: function(data){
+            if(JSON.parse(data).result) {
+                percent = JSON.parse(data).d.yearincomdescribe; //百分比
+            }
+        },
+        error:function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest.status);
+            console.log(XMLHttpRequest.readyState);
+            console.log(textStatus);
+        }
+    });
+
 };
 
 
@@ -82,9 +102,9 @@ wx.ready(function(){
     //获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
     wx.onMenuShareTimeline({
 
-        title: '别人眼中金融高薪的你，收入水平达标了吗？一分钟给你薪酬竞争力分析报告', // 分享标题
+        title: '别人眼中金融高薪的你，收入水平达标了吗？薪酬完胜'+percent+'同职人员', // 分享标题
 
-        link: 'http://www.51jrq.com/wx/xcbg/share.html?shareid='+shareid, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: 'http://www.51jrq.com/wx/xcbg/index.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
 
         imgUrl: 'http://www.51jrq.com/wx/xcbg/images/header.png', // 分享图标
 
@@ -102,11 +122,11 @@ wx.ready(function(){
     //获取“分享给朋友”按钮点击状态及自定义分享内容接口
     wx.onMenuShareAppMessage({
 
-        title: '别人眼中金融高薪的你，收入水平达标了吗？一分钟给你薪酬竞争力分析报告', // 分享标题
+        title: '别人眼中金融高薪的你，收入水平达标了吗？薪酬完胜'+percent+'同职人员', // 分享标题
 
         desc: '51金融圈将以严谨的职业态度对您提交的数据资料严格保密。此问卷仅在本次调研活动中做分析依据使用，请放心作答。', // 分享描述
 
-        link: 'http://www.51jrq.com/wx/xcbg/share.html?shareid='+shareid, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: 'http://www.51jrq.com/wx/xcbg/index.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
 
         imgUrl: 'http://www.51jrq.com/wx/xcbg/images/header.png', // 分享图标
 
