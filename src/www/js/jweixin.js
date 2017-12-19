@@ -24,7 +24,7 @@ var abc = function() {
     });
 };
 abc();
-var shareid = '';
+/*var shareid = '';
 var PR ="http://"+window.location.host+"/";
 var url = PR + "vita/m/salary/count";
 var count = function(formData){
@@ -50,7 +50,7 @@ var count = function(formData){
             console.log(textStatus);
         }
     })
-};
+};*/
 var percent = '';
 var getNair = function (answerid){
     $.ajax({

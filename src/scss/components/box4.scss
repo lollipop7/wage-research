@@ -1,40 +1,17 @@
 //Created by lollipop 2017/12/13
-
 .box4 {
-  @font-face {
-    font-family: 'bebas';
-    src: url(../images/bebas.ttf);
-  }
-  @font-face {
-    font-family: 'fzktjt';
-    src: url(../images/fzktjt.ttf);
-  }
-  //下拉箭头
-  .next-arrow {
-    display: block;
-    @include px2rem(width, 53px);
-    @include px2rem(height, 57px);
-    background-image: url(../images/box4/next-arrow.png);
-    position: absolute;
-    @include px2rem(bottom, 66px);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    animation: webSwipeTipAfter 1.5s infinite ease-in-out;
-    background-size: 100% 100%;
-  }
   .test-result {
-    @include px2rem(top, 60px);
+    @include px2rem(top, 30px);
     @include px2rem(width, 351px);
     @include px2rem(height, 194px);
   }
   .calcu {
-    @include px2rem(top, 294px);
+    @include px2rem(top, 264px);
     @include px2rem(width, 222px);
     @include px2rem(height, 66px);
   }
   .salary {
-    @include px2rem(margin-top, 380px);
+    @include px2rem(margin-top, 350px);
     text-align: center;
   }
   .num {
@@ -57,20 +34,21 @@
     @include px2rem(height, 27px);
   }
   .radar {
-    @include px2rem(margin-top, 30px);
+    //@include px2rem(margin-top, 30px);
     @include px2rem(height, 450px);
     text-align: center;
     .chart {
       display: inline-block;
-      background-image: url(../images/box4/radar.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      @include px2rem(width, 440px);
-      @include px2rem(height, 400px);
+      //background-image: url(../images/box4/radar.png);
+      //background-repeat: no-repeat;
+      //background-position: center;
+      width: 100%;
+      height: 100%;
     }
   }
   .benefit {
-    @include px2rem(top, 934px);
+    @include px2rem(margin-top, 30px);
+    @include px2rem(margin-bottom, 100px);
     @include px2rem(width, 538px);
     @include px2rem(height, 48px);
     background-image: url(../images/box4/4.png);
@@ -78,4 +56,20 @@
     background-size: cover;
     display: block;
   }
+  //下拉箭头
+  .next-arrow {
+    display: block;
+    @include px2rem(width, 53px);
+    @include px2rem(height, 57px);
+    background-image: url(../images/box4/next-arrow.png);
+    position: absolute;
+    @include px2rem(top, 950px);
+    @include px2rem(bottom, 66px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: webSwipeTipAfter 1.5s infinite ease-in-out;
+    background-size: 100% 100%;
+  }
+
 }

@@ -3,11 +3,13 @@ doctype html
 html(lang='en')
     include includes/head-nair
     body
-     .swiper-container
-         .swiper-wrapper
-             include components/box4
-             include components/box5
-    //audio(id="audios",src="audio/bg.mp3",loop="loop",autoplay="autoplay")
+        .nair-wrapper
+            include includes/music
+            .swiper-container
+                .swiper-wrapper
+                    include components/box4
+                    include components/box5
+    audio(id="audios",src="audio/bg.mp3",loop="loop",autoplay="autoplay")
     //- zepto
     script(src="js/zepto.min.js")
     //- swiper

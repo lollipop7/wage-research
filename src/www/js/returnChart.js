@@ -6,6 +6,20 @@
  */
 var PR ="http://"+window.location.host+"/";
 var url = PR + "vita/m/salary/result";
+
+//字体
+var getDpr = function getDpr(){
+    var dpr = $('html').attr('data-dpr');
+    if (dpr == 1) {
+        return 12;
+    }else if (dpr == 2) {
+        return  24;
+    }else {
+        return 36;
+    }
+};
+
+
 var radarChart = {
     yearsalary: '',
     industrydescribe: '',
@@ -80,7 +94,7 @@ var radarChart = {
     },
     // 绘制图表。
     initRadar:function(dataGR){
-        var myChart = echarts.init(document.getElementById('main')).setOption({
+        echarts.init(document.getElementById('main')).setOption({
             baseOption: {
                 title: { text:null }, // 隐藏图表标题
                 legend: { enabled: false }, // 隐藏图例
@@ -92,17 +106,17 @@ var radarChart = {
                     name: {
                         textStyle: {
                             color: '#74edf8',
-                            fontSize: '16px'
+                            fontSize: getDpr()
                         },
                         formatter: (text) => {
                             text = text.replace(/\S{3}/g, function(match) {
                                 // console.log(match)
                                 return match + '\n'
-                            })
+                            });
                             return text
                         },
                     },
-                    center:['50%','50%'], // 图的位置
+                    center:['50%','60%'], // 图的位置
                     indicator: [
                         { name: '月基本薪资', max: 100},
                         { name: '年现金津贴', max: 100},
@@ -125,7 +139,7 @@ var radarChart = {
                     },
                     axisLine: {
                         lineStyle: {
-                            color: 'rgba(81, 146, 222, 0.4)'
+                            color: 'rgba(116, 237, 248, 0.4)'
                         }
                     }
                 },
@@ -170,14 +184,29 @@ var answerid = GetQueryString('answerid') || localStorage.getItem('answerid');
 
 radarChart.getNair(answerid);
 
-
-$(window).resize(function() {//这是能够让图表自适应的代码
-    myChart.resize();
-});
-
 $('.announce').click(function () {
     window.location.href = 'http://www.51jrq.com'
-})
+});
+
+//画布
+var canvas = document.querySelector("canvas");
+
+var scaleCanvas = function(canvas){
+    var ctx = canvas.getContext('2d');
+    var ratio = window.devicePixelRatio || 1;
+    if (1 != ratio) {
+        canvas.style.width = canvas.width + 'px';
+        canvas.style.height = canvas.height + 'px';
+        canvas.width *= ratio;
+        canvas.height *= ratio;
+        ctx.scale(ratio, ratio);
+
+    }
+    return canvas;
+};
+
+scaleCanvas(canvas);
+
 
 
 

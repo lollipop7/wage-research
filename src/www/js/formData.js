@@ -109,28 +109,28 @@ var submitFormData = function () {
         hopgains: (parseFloat(hopgains)/100).toFixed(2)
     };
 
-    // var PR ="http://"+window.location.host+"/";
-    // var url = PR + "vita/m/salary/count";
-    // $.ajax({
-    //     url: url,
-    //     type: 'POST',
-    //     data: formData,
-    //     success: function (data) {
-    //         if(JSON.parse(data).result) {
-    //             bundle.openShareModal();
-    //             $('#iknow').click(function () {
-    //                 bundle.closeShareModal();
-    //                 window.location.href = 'nair.html?answerid='+JSON.parse(data).d.answerid;
-    //                 localStorage.setItem('answerid', JSON.parse(data).d.answerid);
-    //             });
-    //         }
-    //     },
-    //     error:function(XMLHttpRequest, textStatus, errorThrown) {
-    //         console.log(XMLHttpRequest.status);
-    //         console.log(XMLHttpRequest.readyState);
-    //         console.log(textStatus);
-    //     }
-    // })
+    var PR ="http://"+window.location.host+"/";
+    var url = PR + "vita/m/salary/count";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: formData,
+        success: function (data) {
+            if(JSON.parse(data).result) {
+                bundle.openShareModal();
+                $('#iknow').click(function () {
+                    bundle.closeShareModal();
+                    window.location.href = 'nair.html?answerid='+JSON.parse(data).d.answerid;
+                    localStorage.setItem('answerid', JSON.parse(data).d.answerid);
+                    getNair(JSON.parse(data).d.answerid);
+                });
+            }
+        },
+        error:function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest.status);
+            console.log(XMLHttpRequest.readyState);
+            console.log(textStatus);
+        }
+    })
 
-    count(formData);
 }

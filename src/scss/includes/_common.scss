@@ -60,10 +60,41 @@
   animation: webSwipeTipAfter 1.5s infinite ease-in-out;
   background-size: 100% 100%;
 }
+// 音乐图标
+.control {
+  background-image: url(../images/music_01.gif);
+  background-repeat: no-repeat;
+  @include px2rem(width, 54px);
+  @include px2rem(height, 54px);
+  position: absolute;
+  z-index: 1000;
+  background-size:contain;
+  @include px2rem(top, 38px);
+  @include px2rem(right, 32px);
+}
+.music-icon {
+  background: url(../images/music-paused.png) no-repeat 100% 100%;
+  background-size: contain;
+  @include px2rem(width, 54px);
+  @include px2rem(height, 54px);
+  &.active {
+    animation: musicLoop 1.2s linear infinite;
+    background-image: url(../images/music-play.png);
+  }
+}
 
 img {
   position: absolute;
   display: block;
+}
+
+@font-face {
+  font-family: 'bebas';
+  src: url(../images/bebas.ttf);
+}
+@font-face {
+  font-family: 'fzktjt';
+  src: url(../images/fzktjt.ttf);
 }
 
 

@@ -192,8 +192,7 @@
 }
 .box1,
 .box2,
-.box3
-.box7 {
+.box3{
   .label-text {
     input {
       @include px2rem(padding-left, 20px);

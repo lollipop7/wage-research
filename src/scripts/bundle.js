@@ -1,13 +1,23 @@
 //Created by lollipop at 2017/11/21.
 $('document').ready(function(){
     bundle.init();
-    // $('.nair-radio-input').click(function () {
-    //     console.log($(this).val());
-    //     var _obj = this;
-    //     bundle.addClassActive(_obj)
-    //     // $(this).siblings('.nair-radio-inner').addClass('active');
-    //     // $(this).parents("label").siblings("label").children(".nair-radio-inner").removeClass("active");
-    // });
+    //播放音乐
+    var audio = document.getElementById("audios");
+    audio.addEventListener("canplaythrough",
+        function() {
+            audio.play();
+            $('.music-icon').addClass('active');
+        },
+        false);
+    $('.control').on('click',function(){
+        if(audio.paused){
+            audio.play();
+            $(this).find('.music-icon').addClass('active');
+        }else{
+            audio.pause();
+            $(this).find('.music-icon').removeClass('active');
+        }
+    });
 
 });
 var bundle = {

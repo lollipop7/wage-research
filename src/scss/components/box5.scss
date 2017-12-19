@@ -1,11 +1,7 @@
 //Created by lollipop 2017/12/13
 .box5 {
-  @font-face {
-    font-family: 'fzktjt';
-    src: url(../images/fzktjt.ttf);
-  }
   .beyond {
-    @include px2rem(margin-top, 100px);
+    @include px2rem(margin-top, 50px);
     @include px2rem(height, 140px);
     position: relative;
     text-align: center;
@@ -31,8 +27,9 @@
   }
   .wholeeva {
     @include px2rem(margin-top, 60px);
+    @include px2rem(margin-bottom, 450px);
     position: relative;
-    font-family: 'fzktjt';
+    //font-family: 'fzktjt';
     text-align: center;
     color: #81c9cf;
     .evabg {
@@ -41,6 +38,7 @@
       @include px2rem(height, 416px);
     }
     .eva-text {
+      font-family: 'fzktjt';
       @include px2rem(padding-top, 76px);
     }
     h2{
@@ -58,13 +56,15 @@
     }
   }
   .qr-code {
-    @include px2rem(top, 803px);
+    @include px2rem(top, 703px);
     @include px2rem(width, 193px);
     @include px2rem(height, 206px);
   }
   .announce {
     animation: transferHighlightIn 1s infinite alternate ease-in-out;
-    @include px2rem(top, 1052px);
+    @include px2rem(top, 952px);
+    @include px2rem(margin-bottom, 36px);
+    @include px2rem(bottom, 36px);
     @include px2rem(width, 409px);
     @include px2rem(height, 42px);
   }
