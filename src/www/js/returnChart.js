@@ -29,7 +29,7 @@ var radarChart = {
     otherdescribe: '',
     countlist: [],
     getNair: function(answerid){
-        console.log(answerid);
+        // console.log(answerid);
         var _thisNair = this;
         $.ajax({
             url: url,
@@ -37,7 +37,6 @@ var radarChart = {
                 answerid: answerid
             },
             success: function(data){
-                console.log(JSON.parse(data));
                 if(JSON.parse(data).result){
                     //薪资
                     _thisNair.yearsalary = JSON.parse(data).d.yearsalary;
@@ -172,8 +171,6 @@ var radarChart = {
     }
 };
 
-
-
 function GetQueryString(name){
     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
@@ -189,9 +186,8 @@ $('.announce').click(function () {
 });
 
 //画布
-var canvas = document.querySelector("canvas");
-
-var scaleCanvas = function(canvas){
+function scaleCanvas(){
+    var canvas = document.querySelector("canvas");
     var ctx = canvas.getContext('2d');
     var ratio = window.devicePixelRatio || 1;
     if (1 != ratio) {
@@ -205,7 +201,7 @@ var scaleCanvas = function(canvas){
     return canvas;
 };
 
-scaleCanvas(canvas);
+window.onload = scaleCanvas;
 
 
 
