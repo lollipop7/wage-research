@@ -36,7 +36,7 @@ wwwDir = join(srcDir, 'www'),
 //scss folder
 scssDir = join(srcDir, 'scss');
 
-let fileArray = ['index','nair'];
+let fileArray = ['index','nair','leaveMsg'];
 //compile pug template file to html
 gulp.task('compile:pug', () => {
     _.each(fileArray, pugFileName => {
