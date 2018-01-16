@@ -94,6 +94,7 @@ gulp.task('base64:watch', () => {
     gulp.watch(join(wwwDir, 'styles', 'index.css'), ['base64'])
 });
 
+
 //web server
 gulp.task('ws', ['compile:pug:watch', 'compile:scss:watch', 'base64:watch','compress'], err => {});
 
